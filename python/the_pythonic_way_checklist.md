@@ -1,10 +1,3 @@
-More pythonic way is
-```python
-if start_time is None:
-    # ...
-```
-instead of 
-```python
-if start_time == None:
-    # ...
-```
+* Use `if something is None` instead of `if something == None`
+
+* Use `while open(file_path, "a") as file` instead of `file = open(local_file_path, "a") ... file.close()`
