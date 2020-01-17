@@ -31,8 +31,10 @@ fruit_basket.fruit.price = 1.5
 first_fruit = fruit_basket.fruit_pack.add()  # <== this is a very counter-intuitive way!
 first_fruit.name = "Red Apple"
 first_fruit.price = 2
-
+# add another one
 second_fruit = fruit_basket.fruit_pack.add()
 second_fruit.name = "Green Apple"
 second_fruit.price = 1.8
+# add in another way
+fruit_basket.fruit_pack.add(name="Yellow Apple", price=2.1)
 ```
