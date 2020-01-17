@@ -37,4 +37,9 @@ second_fruit.name = "Green Apple"
 second_fruit.price = 1.8
 # add in another way
 fruit_basket.fruit_pack.add(name="Yellow Apple", price=2.1)
+# yet another way
+fourth_fruit = fruit_and_fruit_basket_pb2.Fruit()
+fourth_fruit.name = "Orange Apple"
+fourth_fruit.price = 0.1
+fruit_basket.fruit_pack.extend([fourth_fruit]) # <== this is a deep copy of fourth_fruit
 ```
