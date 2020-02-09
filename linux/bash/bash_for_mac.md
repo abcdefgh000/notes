@@ -11,5 +11,14 @@
   parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
   }
-  export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+  export PS1="\u@\h \w\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+  ```
+  * inside the above `export PS1="..."`:
+    * `u` is to display the current user name on linuxe
+    * `h` is to display the current machine name
+    * `w` is to display the current full path, if changed to `W`, then it will only display the current folder name without parent folders' names
+
+To make the changes to take effect immediately, run:
+```
+$ source ~/.bash_profile
 ```
