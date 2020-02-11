@@ -1,4 +1,5 @@
-## For MAC: .bash_profile
+## For MAC
+Edit `~/.bash_profile`
 
 * Make terminal to show colors
   ```
@@ -18,6 +19,16 @@
     * `h` is to display the current machine name
     * `w` is to display the current full path, if changed to `W`, then it will only display the current folder name without parent folders' names
 
+## For Linux
+Edit `~/.bashrc`
+
+* Make terminal to show colors
+  ```
+  force_color_prompt=yes
+  ```
+
+* Show Git branch in prompt
+  * The same to the settings of MAC
 
 ## Overview
 To make the changes to take effect immediately, run:
