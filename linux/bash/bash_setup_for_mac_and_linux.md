@@ -1,4 +1,4 @@
-## .bash_profile
+## For MAC: .bash_profile
 
 * Make terminal to show colors
   ```
@@ -18,7 +18,9 @@
     * `h` is to display the current machine name
     * `w` is to display the current full path, if changed to `W`, then it will only display the current folder name without parent folders' names
 
+
+## Overview
 To make the changes to take effect immediately, run:
 ```
-$ source ~/.bash_profile
+$ source ~/.bash_profile [or .bashrc]
 ```
