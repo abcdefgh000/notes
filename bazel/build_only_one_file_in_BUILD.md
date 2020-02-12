@@ -7,3 +7,4 @@ The path and colon and file name format is the same as the format in the `BUILD`
 ```
 $ bazel build //test/example:utils
 ```
+Do not run this on the `BUILD` file itself, like this will not help: `$ bazel build //test/example:BUILD`
