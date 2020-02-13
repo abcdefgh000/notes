@@ -1,1 +1,3 @@
-ue. "has_" will return true if the user set the field. The behavior of empty() is as follows: if the user set this field to a non-empty string, the result is false; if the user didn't set the field (has_() is false), empty() returns true.
+A string field (like `name`) inside a protobuf message has a default value of "", if the user does not set its value, then it will be empty string.
+
+The method `.has_name()` will return `true` if the user has set the field, and `false` if the field only has the default value.
