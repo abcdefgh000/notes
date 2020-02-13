@@ -1,0 +1,1 @@
+ue. "has_" will return true if the user set the field. The behavior of empty() is as follows: if the user set this field to a non-empty string, the result is false; if the user didn't set the field (has_() is false), empty() returns true.
