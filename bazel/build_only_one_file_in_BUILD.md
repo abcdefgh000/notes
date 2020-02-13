@@ -7,4 +7,9 @@ The path and colon and file name format is the same as the format in the `BUILD`
 ```
 $ bazel build //test/example:utils
 ```
+We can also go to the folder directly and do the bazel build inside that folder like this, then we do not need `//` or `:`:
+```
+$ bazel build ./utils
+```
+
 Do not run this on the `BUILD` file itself, like this will not help: `$ bazel build //test/example:BUILD`
