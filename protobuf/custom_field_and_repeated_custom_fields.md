@@ -43,3 +43,11 @@ fourth_fruit.name = "Orange Apple"
 fourth_fruit.price = 0.1
 fruit_basket.fruit_pack.extend([fourth_fruit]) # <== this is a deep copy of fourth_fruit
 ```
+
+## C++
+```cpp
+FruitBascket fruit_basket;
+for (Fruit fruit : fruit_list) {
+  fruit_basket.add_fruit_pack(fruit);
+}
+```
