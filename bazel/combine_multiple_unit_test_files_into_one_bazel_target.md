@@ -8,7 +8,7 @@ cc_test(
         "//folder1/folder12:yyyyyyyy_test.cpp",
         "//folder2/folder21:folder211:zzzz_test.cpp",
     ],
-    deps = [  # <===== in this section we put the combination of all the deps of all the above unit test files
+    deps = [  # <====== here we put the combination of all the deps of all the above unit test files
         "...",
         "............",
         ".......",
