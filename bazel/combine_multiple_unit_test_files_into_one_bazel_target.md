@@ -2,22 +2,21 @@
 
 ```bazel
 cc_test(
-    name = "run_log_mining_unit_tests",
+    name = "run_all_unit_tests",
     srcs = [
-        "//vision/data/tools/mining/miner/pcp:utils_test.cpp",
-        "//vision/data/tools/mining/miner/vision:utils_test.cpp",
-        "//vision/data/tools/mining/test:miner_configs_test.cpp",
-        "//vision/data/tools/mining/util:common_utils_test.cpp",
-        "//vision/data/tools/mining/util:filters_test.cpp",
+        "//folder1/folder11:xxx_test.cpp",
+        "//folder1/folder12:yyyyyyyy_test.cpp",
+        "//folder2/folder21:folder211:zzzz_test.cpp",
     ],
-    deps = [
-        "//base/test:utils",
-        "//base/test/gtest:gtest_main",
-        "//external:gmock",
-        "//vision/data/tools/mining/miner/pcp:utils",
-        "//vision/data/tools/mining/miner/vision:utils",
-        "//vision/data/tools/mining/util:common_utils",
-        "//vision/data/tools/mining/util:filters",
+    deps = [  # <===== in this section we put the combination of all the deps of all the above unit test files
+        "...",
+        "............",
+        ".......",
+        ...
     ],
 )
+```
+then we only need to run this one line command to run all the above unit test files:
+```
+bazel run //folderA/folderB:run_all_unit_tests
 ```
