@@ -11,6 +11,8 @@ timestamp_in_ns = time.mktime(today.timetuple()) * 1e9
 
 ### Add or minus some days on top of a date
 ```py
+import datetime
+
 end_date = start_date + datetime.timedelta(num_of_days_diff)
 ```
 
