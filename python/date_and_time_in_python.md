@@ -9,6 +9,11 @@ timestamp_in_seconds = time.mktime(today.timetuple())
 timestamp_in_ns = time.mktime(today.timetuple()) * 1e9
 ```
 
+### Add or minus some days on top of a date
+```py
+end_date = start_date + datetime.timedelta(num_of_days_diff)
+```
+
 ### Get the last previous specific weekday/weekend of a week
 
 ```py
