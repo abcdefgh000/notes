@@ -1,4 +1,15 @@
-# Get the last previous specific weekday/weekend of a week
+### Date to timestamp
+```py
+import datetime
+import time
+
+# today is date type object
+today = datetime.date.today()
+timestamp_in_seconds = time.mktime(today.timetuple())
+timestamp_in_ns = time.mktime(today.timetuple()) * 1e9
+```
+
+### Get the last previous specific weekday/weekend of a week
 
 ```py
 import datetime
