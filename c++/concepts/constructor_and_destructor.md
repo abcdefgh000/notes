@@ -6,6 +6,15 @@ Constructor is special class function that is executed **automatically** wheneve
 Constructor does not return anything, including void.
 
 ```cpp
+class ClassName
+{
+    // ...
+  public:
+    ClassName();
+    ClassName(// parameters);
+    ...
+};
+
 ClassName::ClassName()
 {
    // do sth
@@ -25,6 +34,14 @@ Destructor cannot return anything, or accept any parameters.
 Destructor is releasing memory that was allocated by the class constructor and member functions.
 
 ```cpp
+class ClassName
+{
+    // ...
+  public:
+    // ...
+    ~ClassName();
+};
+
 ClassName::~ClassName()
 {
     // do sth
