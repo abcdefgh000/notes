@@ -1,7 +1,7 @@
 # Function Template
 
 ```cpp
-// Tell the compiler we are using a template.
+// Tell the compiler we are using a template. T represents the variable type.
 template <typename T>
 T getSmaller(T  input1,T  input2) {
     if(input1 < input2) {
