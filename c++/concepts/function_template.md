@@ -12,8 +12,8 @@ T getSmaller(T  input1,T  input2) {
 ```
 
 ```cpp
-std::cout << "Integers compared: " << getSmaller(a,b) << "\n";
-std::cout << "Floats compared: " << getSmaller(f1,f2) << "\n";
-std::cout << "Chars compared: " << getSmaller(c1,c2) << "\n";
-std::cout << "Strings compared: " << getSmaller(s1,s2) << "\n";  
+std::cout << "Integers compared: " << getSmaller(1, 3) << "\n";
+std::cout << "Floats compared: " << getSmaller(1.5, 3.5) << "\n";
+std::cout << "Chars compared: " << getSmaller('h', 'g') << "\n";
+std::cout << "Strings compared: " << getSmaller("Hey guys!", "Hey ladies!") << "\n";  
 ```
