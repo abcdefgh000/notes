@@ -57,3 +57,8 @@ int * int_ptr;
 int num = 1;
 int * int_ptr = &num;
 ```
+
+### 用 pointer 作为函数的parameter
+```cpp
+int calculateSomething(string * strPtr, vector<string> * vecPtr);
+```
