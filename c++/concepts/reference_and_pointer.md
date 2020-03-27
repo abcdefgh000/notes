@@ -29,8 +29,16 @@ modifyString(str);
 
 ### return 一个 reference
 ```cpp
+static std::vector<int> int_vec = {1, 2, 3};
 
+std::vector<int> & doSomething(double ratio) {
+    ...
+    // modify the static int vector
+    ...
+    return int_vec;
+}
 ```
+注意！It's not legal to return a reference to local variable, since the local variable dies when leaving the local scope.
 
 ## Pointer
 
