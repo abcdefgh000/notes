@@ -49,21 +49,21 @@ using namespace std;
 class CustomException: public exception {
   public:
     // This `what()` method is a method of the C++ `exception` base class.
-	virtual const char* what() const throw() {
-		return "Yo!";
-	}
+    virtual const char* what() const throw() {
+        return "Yo!";
+    }
 };
 
 int main() {
-	try {
+    try {
         // Instantiate an object of the `CustomException` class,
         // and throw this object (namely this exception).
-		throw CustomException();
-	}
-	catch(MyException &e) {
-		cout << e.what() << endl;
-	}
+        throw CustomException();
+    }
+    catch(MyException &e) {
+        cout << e.what() << endl;
+    }
     
-	return 0;
+    return 0;
 }
 ```
