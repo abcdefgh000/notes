@@ -1,6 +1,6 @@
 # Exception in C++
 
-## Custom Throw Content and Catch Content
+## Custom throw data type
 The following example throws an integer and catches an integer.
 ```cpp
 try {
@@ -36,5 +36,34 @@ try {
   }
 } catch (...) {
   cout << "Access denied - You must be at least 18 years old." << age;
+}
+```
+
+## Custom Exception Class
+```cpp
+#include <iostream>
+#include <exception>
+
+using namespace std;
+
+class CustomException: public exception {
+  public:
+    // This `what()` method is a method of the C++ `exception` base class.
+	virtual const char* what() const throw() {
+		return "Yo!";
+	}
+};
+
+int main() {
+	try {
+        // Instantiate an object of the `CustomException` class,
+        // and throw this object (namely this exception).
+		throw CustomException();
+	}
+	catch(MyException &e) {
+		cout << e.what() << endl;
+	}
+    
+	return 0;
 }
 ```
