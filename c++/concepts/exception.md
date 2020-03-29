@@ -48,7 +48,7 @@ using namespace std;
 
 class CustomException: public exception {
   public:
-    // This `what()` method is a method of the C++ `exception` base class.
+    // This `what()` method is a method of the C++ `std::exception` base class.
     virtual const char* what() const throw() {
         return "Yo!";
     }
