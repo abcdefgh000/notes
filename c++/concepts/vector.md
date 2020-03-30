@@ -1,6 +1,9 @@
 # Vector
 
-# Vector of vectors
+## Vector Basics
+C++里的 vector 也可以用 `vector[i]` 这样来 读，写，或者loop，像 array 一样。
+
+## Vector of vectors
 
 A vector of vectors is like a grid, each row in this grid is a vector. **Each row (vector) in this grid can have differenct length**!
 
@@ -12,7 +15,7 @@ To instantiate a vector of vectors that all rows in it has the same length:
 vector< vector<int> > grid(3, vector<int>(5, 1));
 ```
 
-To loop all the elements in a vector of vectors:
+To loop all the elements in a vector of vectors，无论每个vector的长度是否相同都可以这么loop:
 ```cpp
 for(int row = 0; row < grid.size(); row++) {
     for(int col = 0; col < grid[row].size(); col++) {
