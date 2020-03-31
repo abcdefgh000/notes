@@ -31,6 +31,7 @@ for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
     cout << it->first << ": " << it->second << endl;
 }
 ```
+**注意！** 用`it->first`的到的 key 是 **`const`** key！是不可以被modify的！
 
 ### Loop by Pair
 ```cpp
