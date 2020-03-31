@@ -1,6 +1,6 @@
 # Generic Class
 
-**In a Generic Class, ALL the member functions must be treated as generic functions.**
+**In a Generic Class, ALL the member functions must be written as generic functions.**
 We have to add the `template<class T>` to each member function.
 
 ```cpp
