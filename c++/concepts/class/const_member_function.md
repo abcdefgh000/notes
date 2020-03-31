@@ -2,7 +2,7 @@
 
 `const` member functions are functions that when called, they do not change the object calling them in any way.
 
-A const member function can be called by a const object or non-const objext. a non-const functions can only be called by non-const objects.
+A const member function can be called by a const object or a non-const objext. A non-const functions can only be called by a non-const object.
 
 Here is the syntax of const member function in C++ language:
 ```cpp
