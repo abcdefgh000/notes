@@ -1,4 +1,4 @@
-# Struct in C++
+# Struct in C++ Overview
 
 ## Difference to `class` in C++
 The **ONLY** difference between a `struct` and a `class` in C++ is that in `struct` member variables are `public` by default.
