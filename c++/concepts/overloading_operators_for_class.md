@@ -1,4 +1,4 @@
-# Overloading Operators
+# Overloading Operators for Class
 
 ```cpp
 class Receipt {
