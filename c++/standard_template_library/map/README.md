@@ -35,7 +35,9 @@ for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
 ### Loop by Pair
 ```cpp
 for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
+    // Use `*it` to get the `pair`.
     pair<string, int> age = *it;
+    // For `pair`, use `.first` instead of `->first`.
     cout << age.first << ": " << age.second << endl;
 }
 ```
