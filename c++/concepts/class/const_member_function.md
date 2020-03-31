@@ -11,21 +11,23 @@ datatype functionName const();
 
 ```cpp
 class Demo {
-   int val;
-   public:
-      Demo(int x = 0) {
+    int val;
+  public:
+     Demo(int x = 0) {
          val = x;
-      }
-      int getValue() const {
+     }
+     int getValue() const { // <=== const member function
          return val;
-      }
+     }
 };
 
 int main() {
-   const Demo d(28);
-   Demo d1(8);
-   cout << "The value using object d : " << d.getValue();
-   cout << "\nThe value using object d1 : " << d1.getValue();
-   return 0;
+    const Demo d1(10);
+    Demo d2(20);
+   
+    cout << "The value using object d1: " << d1.getValue();
+    cout << "\nThe value using object d2: " << d2.getValue();
+   
+    return 0;
 }
 ```
