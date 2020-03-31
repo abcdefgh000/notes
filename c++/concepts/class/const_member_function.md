@@ -1,12 +1,31 @@
 # Const Member Function in a Class
 
-The const member functions are the functions which are declared as constant in the program. The object called by these functions cannot be modified. It is recommended to use const keyword so that accidental changes to object are avoided.
+`const` member functions are functions that when called, they do not change the object calling them in any way.
 
-A const member function can be called by any type of object. Non-const functions can be called by non-const objects only.
+A const member function can be called by a const object or non-const objext. a non-const functions can only be called by non-const objects.
 
-Here is the syntax of const member function in C++ language,
+Here is the syntax of const member function in C++ language:
+```cpp
+datatype functionName const();
+```
 
-datatype function_name const();
-Here is an example of const member function in C++,
+```cpp
+class Demo {
+   int val;
+   public:
+      Demo(int x = 0) {
+         val = x;
+      }
+      int getValue() const {
+         return val;
+      }
+};
 
-
+int main() {
+   const Demo d(28);
+   Demo d1(8);
+   cout << "The value using object d : " << d.getValue();
+   cout << "\nThe value using object d1 : " << d1.getValue();
+   return 0;
+}
+```
