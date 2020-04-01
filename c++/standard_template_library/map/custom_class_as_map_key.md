@@ -35,20 +35,11 @@ class Person {
     int age;
 
   public:
-    Person() :
-        name(""), age(0) {
-    }
-
     Person(string name, int age) :
         name(name), age(age) {}
 
-    Person(const Person& other) {
-        name = other.name;
-        age = other.age;
-    }
-
     void print() const {
-        cout << name << ": " << age << flush;
+        cout << name << " - " << age << flush;
     }
 
     bool operator < (const Person &other) const {
@@ -67,11 +58,10 @@ int main() {
     people[Person("Raj", 40)] = 20;
 
     for (map<Person, int>::iterator it = people.begin(); it != people.end(); it++) {
-        cout << it->second << ": " << '\n';
+        cout << "key: " << it->second << ", value: ";
         it->first.print();
         cout << endl;
     }
     return 0;
 }
 ```
-  
