@@ -45,16 +45,14 @@ for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
 
 ### Loop by `:` and Pair
 ```cpp
-for (pair<Person, int> pair : people) {
-    cout << "key: " << pair.second << ", value: ";
-    pair.first.print();
-    cout << endl;
+for (pair<string, int> pair : ages) {
+    cout << age.first << ": " << age.second << endl;
 }
 ```
 or use `auto` to replace the data type of `pair`:
 ```cpp
 for (auto pair : people) {
-    ...
+    cout << age.first << ": " << age.second << endl;
 }
 ```
 
