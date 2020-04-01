@@ -14,6 +14,7 @@
         return name < other.name;
     }
     ```
+  * 注意！如果 overloaded operator `<` 不涵盖我们的 custom class的所有 member fields的话，那么就会出现这种情况：2个不完全相同的instances被map认为是相同的key。这个情况未必是错的，要看我们的需求。 
   * 题外话：对于 operator `<`，这么一个statement：`bool isSmaller = obj1 < obj2`，我们可以这么理解
     * **`<` 是 `obj1` 的一个 member function，`obj2` 是这个function的输入参数，`bool isSmaller` 是这个function的 返回值**
 
@@ -38,19 +39,17 @@ class Person {
         name(""), age(0) {
     }
 
-	Person(string name, int age) :
-			name(name), age(age) {
+    Person(string name, int age) :
+        name(name), age(age) {}
 
-	}
+    Person(const Person& other) {
+        name = other.name;
+        age = other.age;
+    }
 
-	Person(const Person& other) {
-		name = other.name;
-		age = other.age;
-	}
-
-	void print() const {
-		cout << name << ": " << age << flush;
-	}
+    void print() const {
+        cout << name << ": " << age << flush;
+    }
 
     bool operator < (const Person &other) const {
         if (name == other.name) {
