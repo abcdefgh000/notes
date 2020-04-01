@@ -41,21 +41,18 @@ class Person {
 };
 
 int main() {
-	map<Person, int> people;
+    map<Person, int> people;
 
-	people[Person("Mike", 40)] = 40;
-	people[Person("Mike", 444)] = 123;
-	people[Person("Sue", 30)] = 30;
-	people[Person("Raj", 40)] = 20;
+    people[Person("Mike", 40)] = 40;
+    people[Person("Sue", 30)] = 30;
+    people[Person("Raj", 40)] = 20;
 
-	for (map<Person, int>::iterator it = people.begin(); it != people.end();
-			it++) {
-		cout << it->second << ": " << flush;
-		it->first.print();
-		cout << endl;
-	}
-
-	return 0;
+    for (map<Person, int>::iterator it = people.begin(); it != people.end(); it++) {
+        cout << it->second << ": " << '\n';
+        it->first.print();
+        cout << endl;
+    }
+    return 0;
 }
 ```
 
