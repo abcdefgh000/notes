@@ -14,6 +14,7 @@
         return name < other.name;
     }
     ```
+  * 题外话：对于 operator `>`，这么一个statement：`bool isBigger = obj1 > obj2`，我们可以这么理解：**`>` 是 `obj1` 的一个 member function，`obj2` 是这个function的输入参数，`isBigger` 是这个function的 返回值**
 
 * The member function `void print()` of class `Person` **must be `void print() const`!**
   * Since in the `main` function when we call `it->first.print();`, the `it->first` returns a **`const`** instance of the `Person` class, so any function called by this const instance must be a const member function, since this const instance refuses any potential changes.
