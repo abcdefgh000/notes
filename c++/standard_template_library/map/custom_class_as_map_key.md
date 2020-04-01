@@ -5,7 +5,7 @@
   * 因为：
     * map 必须能比较 任意2个key 是否相等
     * C++ 里的 `map` class 还会自动地动态地 排序所有的 keys
-  * 要实现keys的可比较，在C++里是通过 **overload operator `>`** 来实现的，示例code如下：
+  * 要实现keys的可比较，在C++里是通过 **overload operator `<`** 来实现的，示例code如下：
     ```cpp
     bool operator < (const Person &other) const {
         if (name == other.name) {
@@ -14,7 +14,8 @@
         return name < other.name;
     }
     ```
-  * 题外话：对于 operator `>`，这么一个statement：`bool isBigger = obj1 > obj2`，我们可以这么理解：**`>` 是 `obj1` 的一个 member function，`obj2` 是这个function的输入参数，`isBigger` 是这个function的 返回值**
+  * 题外话：对于 operator `<`，这么一个statement：`bool isSmaller = obj1 < obj2`，我们可以这么理解
+    * **`<` 是 `obj1` 的一个 member function，`obj2` 是这个function的输入参数，`bool isSmaller` 是这个function的 返回值**
 
 * The member function `void print()` of class `Person` **must be `void print() const`!**
   * Since in the `main` function when we call `it->first.print();`, the `it->first` returns a **`const`** instance of the `Person` class, so any function called by this const instance must be a const member function, since this const instance refuses any potential changes.
