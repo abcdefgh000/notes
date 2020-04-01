@@ -42,6 +42,8 @@ class Person {
         cout << name << " - " << age << flush;
     }
 
+    // Overload the operator `<`, we have to do this if we want to use this class as
+    // keys in a map.
     bool operator < (const Person &other) const {
         if (name == other.name) {
             return age < other.age;
