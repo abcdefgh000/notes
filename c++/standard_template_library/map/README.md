@@ -33,13 +33,28 @@ for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
 ```
 **注意！** 用`it->first` 得到的 key 是 **`const`** key！是不可以被modify的！
 
-### Loop by Pair
+### Loop by iterator and Pair
 ```cpp
 for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
     // Use `*it` to get the `pair`.
     pair<string, int> age = *it;
     // For `pair`, use `.first` instead of `->first`.
     cout << age.first << ": " << age.second << endl;
+}
+```
+
+### Loop by `:` and Pair
+```cpp
+for (pair<Person, int> pair : people) {
+    cout << "key: " << pair.second << ", value: ";
+    pair.first.print();
+    cout << endl;
+}
+```
+or use `auto` to replace the data type of `pair`:
+```cpp
+for (auto pair : people) {
+    ...
 }
 ```
 
