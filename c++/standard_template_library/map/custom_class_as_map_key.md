@@ -60,6 +60,7 @@ int main() {
 ```
 
 Note:
-* The member function `void print()` of class `Person` must be `void print() const`, since in the `main` function when we call `it->first.print();`, the `it->first` returns a **`const`** instance of the `Person` class, so any function called by this const instance must be a const member function, since this const instance refuses any potential changes.
+* The member function `void print()` of class `Person` **must be `void print() const`!**
+  * Since in the `main` function when we call `it->first.print();`, the `it->first` returns a **`const`** instance of the `Person` class, so any function called by this const instance must be a const member function, since this const instance refuses any potential changes.
   * It is also a good practice to make the member functions that are not supposed to change the class object to be a const member function.
   
