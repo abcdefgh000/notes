@@ -7,6 +7,8 @@ Vector 可以用 `vector[i]` 这样来 读，写，或者loop，像 C++里的 ar
 可以给 sort function 一个range，这个range的起始位置和终止位置都要用 iterator 来表达。通常直接从vector的begin一直sort到end
 ```cpp
 std::sort(vector.begin(), vector.end());
+
+std::sort(vector.begin(), vector.begin() + 3);
 ```
 
 ### Sort a vector of custom class objects
