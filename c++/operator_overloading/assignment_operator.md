@@ -42,7 +42,7 @@ class Test {
     }
 
     // Overloading assignment operator `=`.
-    const Test& operator=(const Test &other) {
+    const Test & operator = (const Test & other) {
         this->id = other.id;
         this->name = other.name;
         
