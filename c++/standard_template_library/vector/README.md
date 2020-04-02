@@ -11,7 +11,7 @@ std::sort(vector.begin(), vector.end());
 
 如果要sort一个 vector of custom class objects，那么必须给这个 custom class 加一个 overloaded operator `<`，示例代码如下
 ```cpp
-bool operator < (const & other) const {
+bool operator < (const MyClass & other) const {
     return this->field1 < other.field1;
 }
 ```
