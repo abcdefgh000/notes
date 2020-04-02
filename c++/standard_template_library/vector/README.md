@@ -23,3 +23,9 @@ bool comparatorFunction(const MyClass & obj1, const MyClass & obj2) {
     return obj1.field1 < obj2.field2;
 }
 ```
+
+下面代码里，sort的第三个input paramater 是一个 **Function Pointer type**！哦也
+```cpp
+std::sort(vector.begin(), vector.end(), comparatorFunction);
+```
+
