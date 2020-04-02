@@ -10,9 +10,16 @@ std::sort(vector.begin(), vector.end());
 ```
 
 ### Sort a vector of custom class objects
-那么必须给这个 custom class 加一个 overloaded operator `<`，示例代码如下
+#### 第一种方法：给 custom class 加一个 overloaded operator `<`
 ```cpp
 bool operator < (const MyClass & other) const {
     return this->field1 < other.field1;
+}
+```
+
+#### 第二种方法：造一个 comparator function，扔到 sort function 里去
+```cpp
+bool comparatorFunction(const MyClass & obj1, const MyClass & obj2) {
+    return obj1.field1 < obj2.field2;
 }
 ```
