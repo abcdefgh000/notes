@@ -42,6 +42,8 @@ class Test {
     }
 
     // Overloading assignment operator `=`.
+    // This function itself is not a const member function (so no `const` before the `{`),
+    // since we are using this function to modify the current object.
     const Test & operator = (const Test & other) {
         this->id = other.id;
         this->name = other.name;
