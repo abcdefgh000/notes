@@ -28,39 +28,28 @@ An example of copy constructor and overloading assignment operator:
 
 using namespace std;
 
-class Test
-{
-  int id; 
-	string name;
+class Test {
+    int id; 
+    string name;
 
   public:
-	Test() : id(0), name("")
-	{
-		
-	}
+    Test(int id, string name) : id(id), name(name) {}
 
-	Test(int id, string name) : id(id), name(name)
-	{
-		
-	}
+    // Copy constructor.
+    Test(const Test& other) {
+        this->id = other.id;
+        this->name = other.name;
+    }
 
-	Test(const Test& other)
-	{
-		cout << "Copy constructor running" << endl;
-		this->id = other.id;
-		this->name = other.name;
-	}
-
-	const Test& operator=(const Test &other) {
-		cout << "Assignment running" << endl;
-		this->id = other.id;
-		this->name = other.name;
-		return *this;
-	}
-	
-	void print() const
-	{
-		cout << id << ": " << name << endl;
-	}
+    // Overloading assignment operator `=`.
+    const Test& operator=(const Test &other) {
+        this->id = other.id;
+        this->name = other.name;
+        
+	// This is returning the de-reference of the `this` pointer,
+	// but since this function is returning a const reference,
+	// so here we are actually returning a const reference of the current object.
+        return *this;
+    }
 };
 ```
