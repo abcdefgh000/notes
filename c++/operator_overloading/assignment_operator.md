@@ -1,8 +1,13 @@
 # Overloading Assignment Operator
 
-Assignment Operator `=` 原本的意义是 **Shallow Copy**。比如 `MyClass obj2 = obj1`，注意这里 obj1 和 obj2 都不是 reference，那么这里的 `=` 其实就是 把 obj1 的所有 fields shallow copy 到 obj2。如果obj1 里有一个pointer，那么obj2里的同名pointer将会指向obj1里的那个pointer所指向的地址.
+Assignment Operator `=` 原本的意义是 **Shallow Copy**。比如
+```cpp
+MyClass obj2;
+obj2 = obj1;
+````
+注意这里 obj1 和 obj2 都不是 reference，那么这里的 `=` 其实就是 把 obj1 的所有 fields shallow copy 到 obj2。如果obj1 里有一个pointer，那么obj2里的同名pointer将会指向obj1里的那个pointer所指向的地址（特别注意：上面2句statement 的内在机制与 `MyClass obj2 = obj1;` 不同！后者是 copy constructor！如果我们 overload assignment operator，不会影响 `MyClass obj2 = obj1;`）。
 
-实际上，`MyClass obj2 = obj1` 是等价于下面这个code的（只是很少有人像下面这么写罢了）：
+实际上，上面的2句statements 等价于下面这个code（只是很少有人像下面这么写）：
 ```cpp
 MyClass obj2;
 obj2.operator=(obj1);
