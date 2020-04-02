@@ -21,4 +21,46 @@ obj2.operator=(obj1);
 * 先做 `obj2 = obj1`，即 从obj1 的 const reference 进行 shallow copy 得到 obj2
 * 再做 `obj3 = obj2`，即 从obj2 的 const reference 进行 shallow copy 得到 obj3
 
+An example of copy constructor and overloading assignment operator:
+```cpp
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+class Test
+{
+  int id; 
+	string name;
+
+  public:
+	Test() : id(0), name("")
+	{
+		
+	}
+
+	Test(int id, string name) : id(id), name(name)
+	{
+		
+	}
+
+	Test(const Test& other)
+	{
+		cout << "Copy constructor running" << endl;
+		this->id = other.id;
+		this->name = other.name;
+	}
+
+	const Test& operator=(const Test &other) {
+		cout << "Assignment running" << endl;
+		this->id = other.id;
+		this->name = other.name;
+		return *this;
+	}
+	
+	void print() const
+	{
+		cout << id << ": " << name << endl;
+	}
+};
+```
