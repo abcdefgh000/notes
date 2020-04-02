@@ -9,7 +9,8 @@ Vector 可以用 `vector[i]` 这样来 读，写，或者loop，像 C++里的 ar
 std::sort(vector.begin(), vector.end());
 ```
 
-如果要sort一个 vector of custom class objects，那么必须给这个 custom class 加一个 overloaded operator `<`，示例代码如下
+### Sort a vector of custom class objects
+那么必须给这个 custom class 加一个 overloaded operator `<`，示例代码如下
 ```cpp
 bool operator < (const MyClass & other) const {
     return this->field1 < other.field1;
