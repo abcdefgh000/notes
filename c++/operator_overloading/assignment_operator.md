@@ -11,7 +11,7 @@ obj2.operator=(obj1);
 所以上面的例子里，**assignment operator 可以算是 obj2 的一个member function，它有一个explicit的 input paramter obj1，还有一个 implicit input parameter 就是 `this` pointer of obj2，这个function还有一个return 值，就是 obj2 的 const reference!** 
 
 所以这个statement是 valid的：`obj3 = obj2 = obj1;`，它的意思是：
-* 先做 `obj2 = obj1`，即 从obj1 shallow copy 得到 obj2
+* 先做 `obj2 = obj1`，即 从obj1 的 const reference 进行 shallow copy 得到 obj2
 * 再做 `obj3 = obj2`，即 从obj2 的 const reference 进行 shallow copy 得到 obj3
 
 
