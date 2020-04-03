@@ -17,15 +17,18 @@ class Person {
 
     // We cannot and don't need to put a `const` before the `{`,
     // since this function is not a member function.
+    // 如果把 `friend` 去掉，compiler会报错，因为compiler会认为本函数是一个 member function，所以
+    // compiler会认为本函数还有一个隐含的输入参数 `this`，但 operator << 的 overload 只能有2个参数，
+    // 所以 compile 不会通过。
     friend ostream & operator << (ostream & outStream, const Person & person) {
-		outStream << person.name << ", " << person.age << endl;
+        outStream << person.name << ", " << person.age << endl;
         return outStream;
     }
 };
 
 int main() {
     Person person("Dick", 100);
-	cout << person; // "Dick, 100"
+    cout << person; // "Dick, 100"
     return 0;
 }
 ```
