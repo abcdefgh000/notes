@@ -11,10 +11,10 @@ class Food {
 };
 
 Food operator + (const Food & food1, const Food & food2) {
-	string name = food1.getName() + ", " + food2.getName();
-	double weight = food1.getWeight() + food2.getWeight();
-	Food foodSum(name, weight);
-	return foodSum;
+    string name = food1.getName() + ", " + food2.getName();
+    double weight = food1.getWeight() + food2.getWeight();
+    Food foodSum(name, weight);
+    return foodSum;
 }
 ```
 
