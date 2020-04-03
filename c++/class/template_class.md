@@ -1,6 +1,6 @@
-# Generic Class
+# Template Class
 
-**In a Generic Class, ALL the member functions must be written as generic functions, no matter that function did has any generic stuff in it or not.**
+**In a Template Class, ALL the member functions must be written as generic functions, no matter that function did has any generic stuff in it or not.**
 We have to add the `template<class T>` to each member function.
 
 ```cpp
