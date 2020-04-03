@@ -4,7 +4,7 @@
 We have to add the `template<class T>` to each member function.
 
 ```cpp
-// Tell compiler this class uses a generic type.
+// Tell compiler this class uses a template type.
 template <class T>
 class StudentRecord {
   private:
