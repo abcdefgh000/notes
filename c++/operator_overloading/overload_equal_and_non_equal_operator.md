@@ -38,5 +38,15 @@ int main() {
 
 ## 作为 non-member function
 ```cpp
+class Food {
+    // ...
+};
 
+bool operator == (const Food & food1, const Food & food2) {
+    return food1.getName() == food2.getName() && food1.getWeight() == food2.getWeight();
+}
+
+bool operator != (const Food & food1, const Food & food2) {
+    return food1.getName() != food2.getName() || food1.getWeight() != food2.getWeight();
+}
 ```
