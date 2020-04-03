@@ -14,23 +14,23 @@ class Food {
 
   public:
     Food(string name, double weight) : name(name), weight(weight) {}
-
-	string getName() const { return this->name; }
+    
+    string getName() const { return this->name; }
     double getWeight() const { return this->weight; }
 
-	Food operator + (const Food & other) {
-		string name = this->getName() + ", " + other.getName();
-		double weight = this->getWeight() + other.getWeight();
-		Food foodSum(name, weight);
-		return foodSum;
-	}
+    Food operator + (const Food & other) {
+        string name = this->getName() + ", " + other.getName();
+        double weight = this->getWeight() + other.getWeight();
+        Food foodSum(name, weight);
+        return foodSum;
+    }
 };
 
 int main() {
     Food apple("Apple", 1);
     Food cake("Cake", 1.5);
-	Food foodSum = apple + cake;
-	cout << foodSum.getName() << ": " << foodSum.getWeight() << '\n';
+    Food foodSum = apple + cake;
+    cout << foodSum.getName() << ": " << foodSum.getWeight() << '\n';
     return 0;
 }
 ```
