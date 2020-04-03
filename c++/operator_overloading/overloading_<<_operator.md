@@ -37,6 +37,22 @@ int main() {
 
 2. 如果把这个 overload operator << 函数 放到 class的外面，则如此：
 ```cpp
+class Person {
+  private:
+    string name;
+    int age;
+
+  public:
+    Person(string name, int age) : name(name), age(age) {}
+
+	string getName() const { return this->name; }
+    int getAge() const { return this->age; }
+};
+
+ostream & operator << (ostream & outStream, const Person & person) {
+	outStream << person.getName() << ", " << person.getAge() << endl;
+	return outStream;
+}
 ```
 
 因为原版的 `<<` 会返回一个 `ostream`（因此我们才能 chain 一串 `cout << a << b;`），所以 我们 overload 的 `<<` 也必须return 一个 ostream。
