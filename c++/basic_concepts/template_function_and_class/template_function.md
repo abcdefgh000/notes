@@ -1,4 +1,4 @@
-# Function Template
+# Template Function
 
 The `T` is just a symbol, we can use any char or string like `S`, `s`, `hey`, `heyThere123` to replace `T`.
 
