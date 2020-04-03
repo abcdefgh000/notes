@@ -1,6 +1,6 @@
 # Overloading Plus (+) Operator
 
-## 作为 member function
+## 作为 member function，只接受一个param 即 +号右边的param
 ```cpp
 #include <iostream>
 #include <string>
@@ -35,7 +35,7 @@ int main() {
 }
 ```
 
-## 作为 class 以外的 独立 function
+## 作为 class 以外的 独立 function，接受2个param，即 +号两边的2个param
 ```cpp
 class Food {
   // ...
