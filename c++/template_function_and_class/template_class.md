@@ -1,5 +1,0 @@
-# Template Class
-
-```cpp
-
-```
