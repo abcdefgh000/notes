@@ -52,7 +52,27 @@ Food operator + (const Food & food1, const Food & food2) {
 
 ### 2个param的data type 不同
 ```cpp
+Food operator + (const Food & food, double additionalWeight) {
+	string name = food.getName();
+	double weight = food.getWeight() + additionalWeight;
+	Food foodSum(name, weight);
+	return foodSum;
+}
 
+Food operator + (double additionalWeight, const Food & food) {
+	return food + additionalWeight;
+}
+
+int main() {
+    Food apple("Apple", 1);
+	Food foodSum = apple + 2.5;
+	cout << foodSum.getName() << ": " << foodSum.getWeight() << '\n';
+
+    Food foodSum2 = 3.7 + apple;
+	cout << foodSum2.getName() << ": " << foodSum2.getWeight() << '\n';
+
+    return 0;
+}
 ```
 
 ### 返回值也可以不是 这个 class 的 type
