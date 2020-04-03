@@ -21,8 +21,7 @@ class Food {
     Food operator + (const Food & other) {
         string name = this->getName() + ", " + other.getName();
         double weight = this->getWeight() + other.getWeight();
-        Food foodSum(name, weight);
-        return foodSum;
+        return Food(name, weight);
     }
 };
 
@@ -45,8 +44,7 @@ class Food {
 Food operator + (const Food & food1, const Food & food2) {
     string name = food1.getName() + ", " + food2.getName();
     double weight = food1.getWeight() + food2.getWeight();
-    Food foodSum(name, weight);
-    return foodSum;
+    return Food(name, weight);
 }
 ```
 
@@ -59,8 +57,7 @@ class Food {
 Food operator + (const Food & food, double additionalWeight) {
     string name = food.getName();
     double weight = food.getWeight() + additionalWeight;
-    Food foodSum(name, weight);
-    return foodSum;
+    return Food(name, weight);
 }
 
 Food operator + (double additionalWeight, const Food & food) {
