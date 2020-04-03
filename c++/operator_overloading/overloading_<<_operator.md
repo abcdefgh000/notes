@@ -45,13 +45,13 @@ class Person {
   public:
     Person(string name, int age) : name(name), age(age) {}
 
-	string getName() const { return this->name; }
+    string getName() const { return this->name; }
     int getAge() const { return this->age; }
 };
 
 ostream & operator << (ostream & outStream, const Person & person) {
-	outStream << person.getName() << ", " << person.getAge() << endl;
-	return outStream;
+    outStream << person.getName() << ", " << person.getAge() << endl;
+    return outStream;
 }
 ```
 
