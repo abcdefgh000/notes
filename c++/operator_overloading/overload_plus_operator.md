@@ -36,6 +36,7 @@ int main() {
 ```
 
 ## 作为 class 以外的 独立 function，接受2个param，即 +号两边的2个param
+### 2个param都是 本class的object
 ```cpp
 class Food {
   // ...
@@ -49,3 +50,12 @@ Food operator + (const Food & food1, const Food & food2) {
 }
 ```
 
+### 2个param的data type 不同
+```cpp
+
+```
+
+### 返回值也可以不是 这个 class 的 type
+```cpp
+
+```
