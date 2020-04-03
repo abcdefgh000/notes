@@ -1,6 +1,6 @@
 # Template Class
 
-**In a Template Class, ALL the member functions must be written as generic functions, no matter that function did has any generic stuff in it or not.**
+**In a Template Class, ALL the member functions must be written as template functions, no matter that function did has any template stuff in it or not.**
 We have to add the `template<class T>` to each member function.
 
 ```cpp
@@ -22,7 +22,7 @@ StudentRecord<T>::StudentRecord(T input_grade) {
 }
 
 // Still add the `template<class T>` here,
-// even though this function does not touch any generic type!
+// even though this function does not touch any template type!
 template<class T>
 void StudentRecord<T>::setId(int idIn) {
     studentId = idIn;
@@ -41,7 +41,7 @@ void StudentRecord<T>::setId(int idIn) {
 }
 ```
 
-## Instantiae a Generic Class
+## Instantiae a Template Class
 ```cpp
 StudentRecord<int> student1(98);
 StudentRecord<float> student2(99.5);
