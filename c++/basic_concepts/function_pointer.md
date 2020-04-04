@@ -43,8 +43,8 @@ int main() {
     // 注意！调用 input function作为param 时，不再需要用 pointer to function！
     // 直接用 input function 的 function name 就可以！
     // (当然定义一个pointer to function 然后再用那个 pointer 在这里作为 param 也是可以的，但多此一举)
-    cout << dealWithTwoNums(3, 5, ptrTwoSum) << endl; // 8
-    cout << dealWithTwoNums(10, 2, ptrTwoMulti) << endl; // 20
+    cout << dealWithTwoNums(3, 5, twoSum) << endl; // 8
+    cout << dealWithTwoNums(10, 2, twoMulti) << endl; // 20
 
     return 0;
 }
