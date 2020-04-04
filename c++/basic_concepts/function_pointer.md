@@ -1,3 +1,3 @@
 # Function Pointer
 
-The name of a function is actually a pointer to the function!
+The **name of a function** is actually **the pointer to the function**!
