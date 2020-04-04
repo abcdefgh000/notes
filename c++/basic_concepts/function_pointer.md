@@ -33,15 +33,16 @@ int twoMulti(int num1, int num2) {
     return num1 * num2;
 }
 
+// 注意 这个函数的最后一个param，是如何把一个 pointer to function 作为一个 input param 的，
+// 这个 pointer 里最后的 (int, int) 可以带 参数名，也可以不带，即 (int n1, int n2) 也行
 int dealWithTwoNums(int num1, int num2, int (*inputFunction)(int, int)) {
     return inputFunction(num1, num2);
 }
 
 int main() {
-    // Declare the function pointers.
-    int (*ptrTwoSum)(int, int) = twoSum;
-    int (*ptrTwoMulti)(int, int) = twoMulti;
-
+    // 注意！调用 input function作为param 时，不再需要用 pointer to function！
+    // 直接用 input function 的 function name 就可以！
+    // (当然定义一个pointer to function 然后再用那个 pointer 在这里作为 param 也是可以的，但多此一举)
     cout << dealWithTwoNums(3, 5, ptrTwoSum) << endl; // 8
     cout << dealWithTwoNums(10, 2, ptrTwoMulti) << endl; // 20
 
