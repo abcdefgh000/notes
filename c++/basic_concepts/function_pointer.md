@@ -2,7 +2,7 @@
 
 The **name of a function** is actually **the pointer to the function**!
 
-## Declare the Function Pointer
+## Declare the Function Pointer, and use this Pointer to call the Function
 ```cpp
 #include <iostream>
 
