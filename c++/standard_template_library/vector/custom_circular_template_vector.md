@@ -1,4 +1,4 @@
-# Custom Vector Data Type that is Circular, Iterable and Works with Template Types
+# Custom Circular Vector with Custom Iterable and Works with Template Types
 
 ```cpp
 //ring.h
