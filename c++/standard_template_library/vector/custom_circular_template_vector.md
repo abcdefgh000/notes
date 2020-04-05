@@ -1,4 +1,4 @@
-# Custom Vector Data Type that is Circular and Works with Template Types
+# Custom Vector Data Type that is Circular, Iterable and Works with Template Types
 
 ```cpp
 //ring.h
@@ -11,12 +11,13 @@
 template <typename T>
 class ring
 {
-	std::vector<T> _data;
-	int _cur_index;
-public:
-	class iterator;
+    std::vector<T> _data;
+    int _cur_index;
 
-	ring(int size) : _cur_index(0) {
+  public:
+    class iterator;
+   
+    ring(int size) : _cur_index(0) {
 		_data.reserve(size);
 		for(auto i = 0; i < size; i++)
 		{
