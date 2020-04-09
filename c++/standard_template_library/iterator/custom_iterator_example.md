@@ -98,19 +98,19 @@ using namespace std;
 
 int main() {
     CustomVector customVector;
-	customVector.add(10);
-	customVector.add(20);
-	customVector.add(30);
+    customVector.add(10);
+    customVector.add(20);
+    customVector.add(30);
 
-	cout << customVector.get(0) << endl; // 10
-	cout << customVector.get(2) << endl; // 30
-	cout << customVector.get(3) << endl; // -2147483648
-	cout << customVector.get(-1) << endl; // -2147483648
+    cout << customVector.get(0) << endl; // 10
+    cout << customVector.get(2) << endl; // 30
+    cout << customVector.get(3) << endl; // -2147483648
+    cout << customVector.get(-1) << endl; // -2147483648
 
     for (CustomVector::CustomIterator customIterator = customVector.begin();
-	        customIterator != customVector.end(); customIterator++) {
+        customIterator != customVector.end(); customIterator++) {
         cout << *customIterator << endl;
-	}
+    }
 
     return 0;
 }
