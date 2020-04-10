@@ -36,10 +36,53 @@ int main() {
 
 ## Lambda Expression with parameter and no return value
 ```cpp
+#include <iostream>
+#include <string>
+#include <vector>
 
+using namespace std;
+
+void runLambdaHi(void (*lamHi)(string)) {
+    lamHi("Pete");
+}
+
+int main()
+{
+	// 有parameter 没有return value 的 lambda expression.
+    auto lambdaHi = [](string name) { cout << "Hi " << name << '!' << endl;};
+    
+    lambdaHi("Ben"); // "Hi Ben!"
+    
+    runLambdaHi(lambdaHi); // "Hi Pete!"
+    
+    return 0;
+}
 ```
 
 ## Lambda Expression with parameter and return value
 ```cpp
+#include <iostream>
+#include <string>
+#include <vector>
 
+using namespace std;
+
+void runLambdaAdd(int (*lamAdd)(int a, int b)) {
+    cout << lamAdd(9, 3) << endl;
+}
+
+int main()
+{
+	// 有parameter 也有 return value 的 lambda expression.
+	// The `-> int` at the end means this lambda expression returns an int.
+    auto lambdaAdd = [](int num1, int num2) -> int {
+        return num1 + num2;
+    };
+    
+    cout << lambdaAdd(1, 3) << endl; // 4
+
+    runLambdaAdd(lambdaAdd); // 12
+    
+    return 0;
+}
 ```
