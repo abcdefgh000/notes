@@ -28,8 +28,8 @@ int main() {
     runLambdaExpression(lambdaExpression); // "Hello"
 
     // 一条龙，定义+直接call 一个 lambda expression 
-    runLambdaExpression([]() {cout << "Hello again" << endl; });
-    
+    runLambdaExpression([]() {cout << "Hello again" << endl; }); // "Hello"
+
     return 0;
 }
 ```
