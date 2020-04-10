@@ -48,7 +48,7 @@ void runLambdaHi(void (*lamHi)(string)) {
 
 int main()
 {
-	// 有parameter 没有return value 的 lambda expression.
+    // 有parameter 没有return value 的 lambda expression.
     auto lambdaHi = [](string name) { cout << "Hi " << name << '!' << endl;};
     
     lambdaHi("Ben"); // "Hi Ben!"
@@ -73,8 +73,8 @@ void runLambdaAdd(int (*lamAdd)(int a, int b)) {
 
 int main()
 {
-	// 有parameter 也有 return value 的 lambda expression.
-	// The `-> int` at the end means this lambda expression returns an int.
+    // 有parameter 也有 return value 的 lambda expression.
+    // The `-> int` at the end means this lambda expression returns an int.
     auto lambdaAdd = [](int num1, int num2) -> int {
         return num1 + num2;
     };
