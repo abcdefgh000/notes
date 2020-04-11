@@ -1,5 +1,13 @@
 # Capture the "this" pointer in class
 
+当 lambda expression capture一个 `this` pointer 的时候，是在 capture 一个 reference，所以这样的code是不合法的：
+```
+// Cannot compile, since the `=` below means capture by value 
+[=, this](){
+    // ...
+};
+```
+
 Ref: https://github.com/caveofprogramming/advanced-cplusplus/blob/master/CapturingThisWithLambdas/src/main.cpp
 
 ```cpp
@@ -18,9 +26,9 @@ public:
 		int four { 4 };
 
 		auto pLambda = [&, this]() {
-			one = 111;
-			cout << one << endl;
-			cout << two << endl;
+			this->one = 11;
+			cout << this->one << endl; // 11
+			cout << this->two << endl;
 			cout << three << endl;
 			cout << four << endl;
 		};
