@@ -28,7 +28,7 @@ int main() {
     runLambdaExpression(lambdaExpression); // "Hello"
 
     // 一条龙，定义+直接call 一个 lambda expression 
-    runLambdaExpression([]() {cout << "Hello again" << endl; }); // "Hello"
+    runLambdaExpression([]() {cout << "Hello" << endl; }); // "Hello"
 
     return 0;
 }
@@ -125,4 +125,23 @@ int main() {
     
     return 0;
 }
+```
+
+### Capture by value and also change the input variable as a local-lambda-variable by "mutable" Capture
+如果 capture by value，就不能再改变被capture的variable，比如如下的code会报错：`expression must be a modifiable lvalue`：
+```cpp
+int num = 1;
+[=](){
+    num = 8; // <== 这里会报错，不可修改
+}();
+```
+
+这种情况下，可以加一个 `mutable` key word:
+```cpp
+int num = 1;
+[=]() mutable {
+    num = 8;
+    cout << num << endl; // 这里是 8
+}();
+cout << num << endl; // 这里还是原来的 1 !
 ```
