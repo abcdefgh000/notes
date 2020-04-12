@@ -23,3 +23,11 @@
   int * pNum = &num++;
   int * pNum = &(num++);
   ```
+* `(num + 7)` 这样的东西也是RValue，无法被取地址
+  ```cpp
+  // num 是 LValue
+  int num = 1;
+  // 下面这些code不合法，因为 (num + 7) 和 (7 + num) 都是 RValue
+  int * pNum = &(num + 7);
+  int * pNum = &(7 + num);
+  ```
