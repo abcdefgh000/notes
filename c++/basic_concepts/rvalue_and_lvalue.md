@@ -6,5 +6,14 @@
 
 关于 RValue：
 * RValues are often temporary values
-* Return values of functions are RValues
+* Return values of functions are RValues，所以以下这样的code是不合法的：
+  ```cpp
+  Student getStudent(...) {
+      ...
+      return student1;
+  }
+  
+  // 不合法，因为 getStudent 函数的返回值 是一个 RValue
+  Student * pStudent = & getStudent(...);
+  ```
 * 
