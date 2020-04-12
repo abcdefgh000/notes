@@ -21,5 +21,5 @@
   int num = 1;
   // 下面两行code不合法
   int * pNum = &num++;
-	int * pNum = &(num++);
+  int * pNum = &(num++);
   ```
