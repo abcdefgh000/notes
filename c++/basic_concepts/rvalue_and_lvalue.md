@@ -16,4 +16,10 @@
   // 不合法，因为 getStudent 函数的返回值 是一个 RValue
   Student * pStudent = & getStudent(...);
   ```
-* 
+* `num++` 会搞出来一个 temporary variable，而 temporary viable 是无法被取地址的，所以下面的code是不合法的，即`num++`是 RValue
+  ```cpp
+  int num = 1;
+  // 下面两行code不合法
+  int * pNum = &num++;
+	int * pNum = &(num++);
+  ```
