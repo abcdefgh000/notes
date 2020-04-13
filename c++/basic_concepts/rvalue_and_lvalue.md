@@ -37,19 +37,50 @@
 ### LValue Reference
 C++里一般的reference就是 LValue Reference，比如：
 ```cpp
-Student & rStudent1 = student1;
+Student student1;
+Student & refStudent1 = student1;
 ```
 但如下的code是不合法的，原因和上文同理：因为 getStudent 函数的返回值 是一个 RValue：
 ```cpp
 // 不合法
-Student & rStudent1 = getStudent(...);
+Student & refStudent1 = getStudent(...);
 ```
 但加个 const 就行了：
 ```cpp
 // 合法
-const Student & rStudent1 = getStudent(...);
+const Student & refStudent1 = getStudent(...);
+```
+
+### RValue Reference
+LValue Reference 不能用于 RValue。但是有专门的 RValue Reference 用于 RValue，code如下：
+```cpp
+// 以下2个都是合法的
+Student && student1 = getStudent(...);
+Student && student1 = Student(); // Student() is a Constructor of the Student class.
+```
+这里的 `&&` 就是 RValue Reference 的意思，2个连续的 & 在这个语境下就是特化为这个意思，并不是 reference of reference 的意思，也没有别的意思。
+
+RValue Reference 作为函数的输入参数：
+```cpp
+// Input param 是 LValue Reference
+bool check1(const Student && student) {
+    ...
+}
+
+// Input param 是 RValue Reference，
+// RValue Reference 做参数的时候一般不带 const，因为此函数往往要修改输入的参数
+bool check2(Student && student) {
+    ...
+}
+
+Student student1;
+Student & lRefStudent = student1;
+check1(lRefStudent);
+
+check2(getStudent(...));
+check2(Student())
 ```
 
 
-### RValue Reference
+
 
