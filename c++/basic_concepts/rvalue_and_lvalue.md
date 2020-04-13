@@ -31,3 +31,25 @@
   int * pNum = &(num + 7);
   int * pNum = &(7 + num);
   ```
+
+## LValue Reference and RValue Reference
+
+### LValue Reference
+C++里一般的reference就是 LValue Reference，比如：
+```cpp
+Student & rStudent1 = student1;
+```
+但如下的code是不合法的，原因和上文同理：因为 getStudent 函数的返回值 是一个 RValue：
+```cpp
+// 不合法
+Student & rStudent1 = getStudent(...);
+```
+但加个 const 就行了：
+```cpp
+// 合法
+const Student & rStudent1 = getStudent(...);
+```
+
+
+### RValue Reference
+
