@@ -32,3 +32,6 @@ Student student; // LValue.
 Student && pStudent = static_cast<Student &&>(student);
 ```
 
+## Dynamic Casting
+Static Casting 会强行cast，直到在 run time 出错。Dynamic Casting 在遇到不合理的casting的时候，会返回 nullptr。比如 如果我们要从子类cast到
+父
