@@ -1,13 +1,13 @@
 # Casting between Data Types
 
 ## Static Casting
-Static Casting 是最基本，也是最常用的cast 方式。
+### Static Casting 是最基本，也是最常用的cast 方式
 ```cpp
 double num = 2.9;
 int intNum = static_cast<int>(num); // 2
 ```
 
-Static Casting 用于 parent and sub class 的例子：
+### Static Casting 用于 parent and sub class
 ```ccp
 class Shape {};
 
@@ -25,3 +25,10 @@ int main() {
     return 0;
 }
 ```
+
+### 用 Static Cast 把 LValue 转为 RValue Reference
+```cpp
+Student student; // LValue.
+Student && pStudent = static_cast<Student &&>(student);
+```
+
