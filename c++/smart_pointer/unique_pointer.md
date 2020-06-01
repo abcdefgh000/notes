@@ -1,43 +1,16 @@
 # Unique Pointer
 
-Code ref: https://www.udemy.com/course/learn-advanced-c-programming/learn/lecture/3688732#announcements
+* Prefer creating unique pointer with `std::make_unique` instead of using `new`
+* Prefer using the `=` operator instead of `reset` to reassign the unique pointer
 
 ```cpp
-#include <iostream>
-#include <memory> // Needed for using unique pointer.
-
-using namespace std;
-
-class Test {
-  public:
-    Test() {
-        cout << "created" << endl;
-    }
-
-    void greet() {
-        cout << "Hello" << endl;
-    }
-
-    ~Test() {
-        cout << "destroyed" << endl;
-    }
-};
-
-int main() {
-    unique_ptr<Test[]> pTest(new Test[2]);
-    pTest[1].greet();
-
-    cout << "Finished" << endl;
-    return 0;
-}
-```
-
-The output of the above code is:
-```
-created
-created
-Hello
-Finished
-destroyed
-destroyed
+{
+  auto student = std::make_unique<Student>(1001);
+  ...
+  student->DoSomething();
+  ...
+  student = std::make_unique<Student>(2001);  // The old Student object is deleted.
+  ...
+  AnotherFunction(*student);
+}  // The Student object is deleted when goes out of scope.
 ```
