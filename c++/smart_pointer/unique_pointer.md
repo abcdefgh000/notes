@@ -1,6 +1,6 @@
 # Unique Pointer
 
-* Prefer creating unique pointer with `std::make_unique` instead of using `new`
+* Prefer creating unique pointer with `std::make_unique<MyClass>(obj1)` or `absl::make_unique<MyClass>(obj1)` instead of using `new`
 * Prefer using the `=` operator instead of `reset` to reassign the unique pointer
 
 ```cpp
@@ -13,4 +13,15 @@
   ...
   AnotherFunction(*student);
 }  // The Student object is deleted when goes out of scope.
+```
+
+如果不想传入 unique pointer 并且想特意表达 输入参数”无“ 的时候，可以传入 nullptr：
+```cpp
+void SomeFunction(std::unique_ptr<SomeClass> something) {
+  // ...
+}
+
+SomeClass sth = ...;
+
+SomeFunction(some_bool_flag ? absl::make_unique<SomeClass>(sth) : nullptr);
 ```
