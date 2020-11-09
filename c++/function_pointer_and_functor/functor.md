@@ -9,7 +9,7 @@ A "Functor" a simply a Class with an Operator Overload for the "function call op
 
 举例代码:
 ```cpp
-#include <algorithm>
+#include <algorithm> // For `transform`
 #include <iostream>
 #include <vector>
 
