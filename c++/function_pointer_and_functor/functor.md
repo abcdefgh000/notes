@@ -1,9 +1,18 @@
 # Functor
 
-A "Functor" a simply a Class with an Operator Overload for the "function call operator `()`"
+A "Functor" a simply a Class with an Operator Overload for the "function call operator `()`". To use a functor, we need to:
+* First, instantiate a functor instance of the Functor Class
+* Second, call the functor by this syntax:
+  ```cpp
+  functor_instance_name(input_param);
+  ```
 
 举例代码:
 ```cpp
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
 // A Functor
 class Increment {
  private:
@@ -11,6 +20,7 @@ class Increment {
   
  public:
   Increment(int inc) : increment_amount_(inc) {}
+  int GetIncrementAmount() const { return increment_amount_; }
   
   // This operator overloading enables calling `()` on objects of this Class
   int operator () (int num) const {
@@ -22,14 +32,22 @@ class Increment {
 int main() {
   std::vector<int> numbers = {1, 2, 3};
   
-  int increment_amount = 10;
+  // Instantiate a Functor of Class `Increment`.
+  Increment incre(10);
+  std::cout << "The increment amount is: " << incre.GetIncrementAmount() << std::endl; // 10
+  
+  // Using the above Functor directly.
+  int result = incre(25);
+  std::cout << "25 increased by " << incre.GetIncrementAmount() << " is:" << result << std::endl; // 35
+  
   // Using this Functor as a parameter of the `transform`.
-  transform(numbers, numbers + numbers.size(), numbers, inrement(increment_amount));
+  transform(numbers.begin(), numbers.end(), numbers.begin(), Increment(100));
   
   for (int num : numbers) {
-    std::cout << num << " ";
+    std::cout << num << " "; // 101 102 103
   }
 }
+
 ```
 
 
