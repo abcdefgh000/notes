@@ -1,4 +1,4 @@
-# Prefix and Postfix Operators
+# Prefix (++i) and Postfix (i++) Operator
 
 * Prefix Operator `++i`
   * Increment the value of `i`
