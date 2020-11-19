@@ -1,6 +1,12 @@
 # Functor
 
+## Overview
+
 给一个 Class 搞一个 Operator Overload for the "function call operator `()`"，这个 Class 就变成了一个所谓的 `Functor`. 然后就可以 create an object of this Class and **this object can operate as if it were a function**.
+
+Functor 的目的 有以下几种：
+* To keep some state(s), or some other context information within your function call
+* To be used like a function pointer, to be passed into another function as a parameter
 
 To use a functor, we need to:
 * First, instantiate a functor instance of the Functor Class
@@ -9,7 +15,7 @@ To use a functor, we need to:
   functor_instance_name(input_param);
   ```
 
-举例代码:
+## 举例代码
 ```cpp
 #include <algorithm> // For `transform`
 #include <iostream>
