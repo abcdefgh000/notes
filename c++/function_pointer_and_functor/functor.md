@@ -1,6 +1,8 @@
 # Functor
 
-A "Functor" a simply a Class with an Operator Overload for the "function call operator `()`". To use a functor, we need to:
+给一个 Class 搞一个 Operator Overload for the "function call operator `()`"，这个 Class 就变成了一个所谓的 `Functor`. 然后就可以 create an object of this Class and **this object can operate as if it were a function**.
+
+To use a functor, we need to:
 * First, instantiate a functor instance of the Functor Class
 * Second, call the functor by this syntax:
   ```cpp
