@@ -5,7 +5,9 @@
 * 一个 `RValue` 只能在 `=` 的右边
 * 比如在 `int num = 7` 里：`num` 是 LValue；`7` 是 RValue。
 
-现在：RValue 和 LValue 的意思已经变化了，**和左/右完全无关了，能“被取地址”的就是 LValue，不能的就是 RValue**。
+现在：RValue 和 LValue 的意思已经变化了，**和左/右完全无关了**：
+* **RValue can be moved (即 `std::move(...)`), LValue cannot be moved**
+* **LValue 能“被取地址”，RValue 不能**
 
 关于 RValue：
 * RValues are often temporary values
@@ -19,7 +21,7 @@
   // 不合法，因为 getStudent 函数的返回值 是一个 RValue
   Student * pStudent = & getStudent(...);
   ```
-* `num++` 会搞出来一个 temporary variable，而 temporary viable 是无法被取地址的，所以下面的code是不合法的，即`num++`是 RValue
+* `num++` 会搞出来一个 temporary variable，而 temporary variable 是无法被取地址的，所以下面的code是不合法的，即`num++`是 RValue
   ```cpp
   int num = 1;
   // 下面两行code不合法
