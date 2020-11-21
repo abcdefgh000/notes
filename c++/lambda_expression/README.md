@@ -5,9 +5,7 @@
 Lambda Expression (或称之为 Lambda Function) 是：
 * 首先，它是一个 没有名字的 function (anonymous function)
 * 然后，它可以做到 refer to identifiers outside of its own (function) scope
-
-
-Lambda Expression 和 function pointer 以及 functor 有相似之处，特别是有时候用途相似。但它们本质上是很不同的
+* 它往往是一个一次性使用的 function（所以连名字都不需要），不需要 reuse，所以不必像 functor 或者 function pointer 一样还要煞有介事地定义出来站在那里
 
 ## Lambda Expression with no parameter and no return value
 ```cpp
