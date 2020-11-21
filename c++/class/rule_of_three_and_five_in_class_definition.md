@@ -13,7 +13,7 @@ Class& operator = (const Class& obj);
 ```
 
 # Rule of Five in Class Definition
-With `move` semantics, the "Rule of 3" becomes "Rule of 5", since 
+With `move` semantics, the "Rule of 3" becomes "Rule of 5", since:
 ```cpp
 // Move Constructor
 // 1. `&&` 的意思是 RValue Reference
