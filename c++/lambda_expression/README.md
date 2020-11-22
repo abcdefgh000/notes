@@ -127,7 +127,7 @@ int num = 1;
 }();
 ```
 
-这种情况下，加一个 `mutable` key word 到 lambda expression 里面的 `(...)` 的后面，就解决了:
+这种情况下，加一个 `mutable` key word 到 lambda expression 里面的 `(...)` 的后面，就解决了，如下code。**但这么做是一种 bad practice！真要修改input param 的话，就 capture by reference.**
 ```cpp
 int num = 1;
 [=]() mutable {
