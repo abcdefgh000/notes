@@ -127,7 +127,7 @@ int num = 1;
 }();
 ```
 
-这种情况下，可以加一个 `mutable` key word:
+这种情况下，加一个 `mutable` key word 到 lambda expression 里面的 `(...)` 的后面，就解决了:
 ```cpp
 int num = 1;
 [=]() mutable {
