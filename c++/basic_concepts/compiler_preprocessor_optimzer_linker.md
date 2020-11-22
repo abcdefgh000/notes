@@ -3,15 +3,21 @@
 Compiler 是把 source code 转化为 exexutable binary 的.
 
 Compiler 里面含有：
-* Preprocessor
+* Preprocessor, 注意 这个发生在 compilation 之前！
 * Compiler
 * Optimizer
 * Linker
 
 ## Preprocessor
-Preprocessor 做：
+Preprocessor 处理这些东西：
 * `#include` files
   * code里使用 `#include ...` directive 的时候，source file 会把 被include的file的全部内容 直接复制粘贴到 `#include ...` directive 所在的地方
+* Preprocessor Macros, 比如
+  * `#define`，这其实就是简单的 string substitution in the source file
+    * 有人会用 `#define` 来定义 preprocessor 层面的 constants，例如：
+      * `#define PI 3.14`，这类语句后面没有 `;`，因为 preprocessor 有自己的语法，不同于C或者C++的语法
+      * 注意这就是 compliation 之前的 constants 了，这可能不是 good practice
+  * `#ifndef` + `#define` + `#endif`
 
 
 
