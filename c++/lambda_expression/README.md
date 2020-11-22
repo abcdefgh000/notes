@@ -92,7 +92,9 @@ int main()
 }
 ```
 
-## "Capture" local variables to be input params by value or by reference
+## Capture
+
+### Capture local variables to be input params by value or by reference
 ```cpp    
 // Capture one and two by value
 [one, two](){ cout << one << ", " << two << endl; }();
