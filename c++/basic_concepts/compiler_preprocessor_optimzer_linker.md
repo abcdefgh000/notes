@@ -18,6 +18,7 @@ Preprocessor 处理这些东西：
   * `#define`，这其实就是简单的 string substitution in the source file
     * 有人会用 `#define` 来定义 preprocessor 层面的 (即在compile之前) constants。但其实这不是 good practice，因为 **这样做其实不是定义了constant，只是定义了一个 string replacement 的 macro**。示例代码：
       * `#define PI 3.14`，这类语句后面没有 `;`，因为 preprocessor 有自己的语法，不同于C或者C++的语法
+  * `#undef`，即 `#define` 的反义词
 * Conditional Compilation
   * `#if`, `#elif`, `#else`
   * `#ifdef`, `#ifndef`, `#endif`
