@@ -16,6 +16,8 @@
 }  // The Student object is deleted when goes out of scope.
 ```
 
+* 特别注意！`unique_pointer.get()` 得到的 **是 这个 unique pointer 所对应的 raw pointer**，而不是 这个 unique poiter 所对应的 raw pointer 所指向的 variable 的 value
+
 ## Unique Pointer 作为 input argument to a function
 如果一个函数的 input argument 是一个 unique pointer，传入这个 unique pointer 的时候，要用 `absl::move(...)` 或者 `std::move(...)`，用absl更好。
 
@@ -34,6 +36,8 @@ void FunctionA (...) {
 }
 ```
 在 `//1` 那里，FunctionA 还 own `student` 这个 unique pointer。但到了 `//2` 以及之后的地方，FunctionA 都不再 own `student` 了！`student` 已经永远归属并沉没到 FunctionB 里面去了。
+
+所以，**如果想在传给别的function以后，自己还拥有这个 unique pointer的所有权，就只传入这个 unique pointer所对应的 raw pointer**，即 传入 `unique_pointer.get()`
 
 ## Unique Pointer 与 nullptr 的联合使用
 
