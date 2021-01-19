@@ -1,4 +1,7 @@
 # Reference and Pointer in C++
+一个很棒的关于 pointer 和 reference 的 视频教程，这个教程的全系列我也放在 这个 C++ note folder 的 README.md 里了：
+* Pointer: https://www.youtube.com/watch?v=DTxHyVn0ODg&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=16
+* Reference: https://www.youtube.com/watch?v=DTxHyVn0ODg&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=17
 
 ## Reference
 
