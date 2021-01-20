@@ -75,7 +75,7 @@ int * const * const
 * **A Reference is just a Pointer in disgise. References is just syntax sugar on top of Pointers**, so it's easier to read and use
 * References do not really occupy memoery, they do not really have storage, they are not typical variables.
 
-A reference is just an alias to the original variable.
+A reference is just an alias to the original variable. When we compile the code, we will only get one variable, which is the original variable, the reference is not a new variable, it's just an alias.
 
 ### 声明 reference
 ```cpp
