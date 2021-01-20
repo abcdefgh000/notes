@@ -76,7 +76,24 @@ int * const * const
 * There is nothing you can do with a reference that you cannot do with a pointer. But pointers are more powerful than references.
 * References do not really occupy memoery, they do not really have storage, they are not typical variables.
 
-A reference is just an alias to the original variable. When we compile the code, we will only get one variable, which is the original variable, the reference is not a new variable, it's just an alias. And once you declare a reference to a variable, you cannot make that reference to refer to any other variable.
+A reference is just an alias to the original variable. When we compile the code, we will only get one variable, which is the original variable, the reference is not a new variable, it's just an alias.
+
+Once you declare a reference, you must immediately in the same statement refer it to a variable, you cannot do it later in another statement, namely:
+```cpp
+// Correct:
+int num1 = 10;
+int& ref_of_num1 = num1;
+
+// Wrong:
+int num2 = 20;
+int& ref_of_num2;
+ref_of_num2 = num2;
+```
+
+You cannot make that reference to refer to any other variable. Once declared, a reference sticks to that variable forever, so:
+```cpp
+
+```
 
 ### 声明 reference
 ```cpp
