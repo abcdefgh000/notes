@@ -72,10 +72,11 @@ int * const * const
 ## Reference
 
 *[The Cherno](https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw)* said:
-* **A Reference is just a Pointer in disgise. References is just syntax sugar on top of Pointers**, so it's easier to read and use
+* **A Reference is just a Pointer in disgise. References is just syntax sugar on top of Pointers**, so it's easier and cleaner to read and use. For example passing in a reference as an argument to a function is easier to write both in the caller function and callee function, compared to passing in a pointer.
+* There is nothing you can do with a reference that you cannot do with a pointer. But pointers are more powerful than references.
 * References do not really occupy memoery, they do not really have storage, they are not typical variables.
 
-A reference is just an alias to the original variable. When we compile the code, we will only get one variable, which is the original variable, the reference is not a new variable, it's just an alias.
+A reference is just an alias to the original variable. When we compile the code, we will only get one variable, which is the original variable, the reference is not a new variable, it's just an alias. And once you declare a reference to a variable, you cannot make that reference to refer to any other variable.
 
 ### 声明 reference
 ```cpp
