@@ -71,7 +71,9 @@ int * const * const
 
 ## Reference
 
-"**A Reference is just a Pointer in disgise. References is just syntax sugar on top of Pointers**, so it's easier to read and use. " ---- The Cherno
+*[The Cherno](https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw)* said:
+* **A Reference is just a Pointer in disgise. References is just syntax sugar on top of Pointers**, so it's easier to read and use
+* References do not really occupy memoery, they do not really have storage, they are not typical variables.
 
 A reference is just an alias to the original variable.
 
