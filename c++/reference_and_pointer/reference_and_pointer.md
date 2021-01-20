@@ -71,7 +71,7 @@ int * const * const
 
 ## Reference
 
-**"A Reference is just a Pointer in disgise. References is just syntax sugar on top of Pointers."** ---- The Cherno
+"**A Reference is just a Pointer in disgise. References is just syntax sugar on top of Pointers**, so it's easier to read and use. " ---- The Cherno
 
 A reference is just an alias to the original variable.
 
