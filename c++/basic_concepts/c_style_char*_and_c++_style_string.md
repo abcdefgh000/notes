@@ -1,4 +1,4 @@
-# C Style `char*`, `char xxx[]`, C++ Style `string`
+# C Style `char*`, char array `char xxx[]`, C++ Style `string`
 
 要弄明白 C++ 的 `std::string`，必须先弄明白 C style string 即 `char*`，以及 char array 即 `char xxx[]`。
 
@@ -10,5 +10,5 @@
 * `const char*` 和 `char*` 都可以，但大家更多地用 `const char*` 是因为 大家 在C里定义了一个串char以后，一般也不想再改动
   * 如果要改动，则不要用 `const char*` 而要用 `char*`
   * 当然现在其实大家都用 C++ 的 `std::string` 了
-
+* C++ 的 `std::string` 其实就是一个 前面提到的 char array，再加上一些内置的 functionalities
 
