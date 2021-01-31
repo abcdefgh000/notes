@@ -25,7 +25,7 @@ int * int_ptr = &num;
 
 ### "const pointer" and "pointer to const"
 #### pointer to const variable
-`const int*` 等效于 `int const*`，意思是：这个pointer所指向的东西的值不能变
+`const int*` 等效于 `int const*`，意思是：这个pointer所指向的东西的值不能变。注意，这里的 const 关键字 在 * 之前 就好，至于 const 在 int 之前 还是 之后 都是 无所谓的，意义是一样的。
 ```cpp
 int some_int;
 int const* int_ptr = &some_int; // somt_int 的值不能变
