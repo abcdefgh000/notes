@@ -1,12 +1,13 @@
-# Compiler (含有 Preprocessor, Compiler, Optimizer, Linker)
-
-Compiler 是把 source code 转化为 exexutable binary 的.
-
-Compiler 里面含有：
+# overview
+从 compile 到 link 的过程 是把 source code 转化为 exexutable binary 的。步骤有：
 * Preprocessor, 注意 这个发生在 compilation 之前！
 * Compiler
 * Optimizer
 * Linker
+
+关于 compiler 如何工作 的一个很细致很棒的 视频教程：https://www.youtube.com/watch?v=3tIqpEmWMLI&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=6
+
+关于 linker 如何工作 的一个很细致很棒的 视频教程：https://www.youtube.com/watch?v=H4s55GgAg0I&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=7
 
 ## Preprocessor
 Preprocessor 处理这些东西：
