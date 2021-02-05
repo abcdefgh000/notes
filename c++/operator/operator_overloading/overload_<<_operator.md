@@ -1,4 +1,4 @@
-# Overloading Left Bit Shift Operator "<<" (for cout printing)
+# Overloading "<<" for cout printing
 
 在 `cout << obj` 里，`<<`的左边是 `cout`，右边是 `obj`。但我们如果要把 `<<` overload 成 class of obj 里的一个member function 的话，所有的 class member function的第一个parameter都必须（隐式地）是 这个class object 的 `this` pointer，而不可以作为第二个 parameter 出现在 function的parameter list 里，所以`<<`无法被 overload 成一个 member function。所以：
 
