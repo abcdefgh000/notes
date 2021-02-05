@@ -1,4 +1,4 @@
-# Overloading Equal and Non-Equal Operator
+# Overloading Equal (==) and Non-Equal (!=) Operator
 
 ## 作为 member function
 ```cpp
