@@ -16,7 +16,7 @@ class CustomScopedPointer {
   }
   
  private:
-  Thing* thing_pointer;
+  Thing* thing_pointer_;
 };
 
 class Thing {
