@@ -29,12 +29,19 @@ ClassName::ClassName(// parameters)
 ```
 
 ### Copy Constructor
+一个关于 copy constructor 的很好的 短视频教程（这个视频的前1/3是讲copy，后1/2是讲copy constructor）：https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=45
+
 ```cpp
 Class(const Class& obj);
 ```  
-Copy Constructor 的样子如上。
-
-一个关于 copy constructor 的很好的 短视频教程（这个视频的前1/3是讲copy，后1/2是讲copy constructor）：https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=45
+Copy Constructor 的样子如上。Copy Constructor 的用法有如下2种，其本质都是一样的：
+```cpp
+// 注意它左边带了`Class`，如果只有`object2 = object1;` 那就是在call copy assignment operator
+Class object2 = object1;
+```
+```cpp
+Class object2(object1);
+```
 
 ### Move Constructor
 ```cpp
@@ -72,7 +79,11 @@ Copy Assignment Operator 和 Move Assignment Operator 都是 overload assignment
 ```cpp
 Class& operator = (const Class& obj);
 ```
-Copy Assignment Operator 的样子如上.
+Copy Assignment Operator 的样子如上，用法如下：
+```cpp
+Class object1;
+object1 = object2; // This line is calling the Copy Assignment Operator
+```
 
 
 ### Move Assignment Operator
