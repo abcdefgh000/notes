@@ -34,7 +34,7 @@ Class(const Class& obj);
 ```  
 Copy Constructor 的样子如上。
 
-一个关于 copy constructor 的很好的 短视频教程（这个视频的前1/3是讲copy，后2/3是讲copy constructor）：https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=45
+一个关于 copy constructor 的很好的 短视频教程（这个视频的前1/3是讲copy，后1/2是讲copy constructor）：https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=45
 
 ### Move Constructor
 ```cpp
