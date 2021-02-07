@@ -3,6 +3,8 @@
 关于 copy operator 和 assignment operator，在别的笔记里记录。这里只记录 copy constructor 和 move constructor。
 
 ## Constructor
+### 一般的 Constructor
+
 Constructor is special class function that is executed **automatically** whenever we create a new instance of the class.
 
 Constructor does not return anything, including void.
@@ -28,11 +30,30 @@ ClassName::ClassName(// parameters)
 }
 ```
 
-## Copy Constructor
+### Copy Constructor
 一个关于 copy constructor 的很好的 短视频教程（这个视频的前1/3是讲copy，后2/3是讲copy constructor）：https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=45
 
-## Move Constructor
+### Move Constructor
+Move Constructor 的目的是 **偷窃或者说挪用 他者 正在拥有的 allocated memory**，所以就不必再 allocate 一遍 memory。这样就：
+* 节约了space
+* 避免了对各种东西进行copy的时间消耗
+* 之后在 run destructor 的时候，也不必 de-allocate 2次memory，而只用 de-allocate 一次
 
+被挪用的 他者 是某个RValue，比如说某个 temporary variable。
+Move Constructor 和 RValue Reference 紧密相关，可以参考我关于 RValue Reference 的 note。
+
+Move Constructor 的 样子和 Copy Constructor 很像：
+```cpp
+// Copy Construcor
+Person(const Person & other) {
+    ...
+}
+
+// Move Constructor
+Person(Person && other) { // The input param is a RValue Reference
+    ...
+}
+```
 
 
 ## Destructor
