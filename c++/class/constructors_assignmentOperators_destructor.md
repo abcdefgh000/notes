@@ -1,6 +1,4 @@
-# Constructor, Copy Constructor, Move Constructor, Destructor, Rule of 3 and Rule of 5
-
-这篇笔记不讨论 assignment operator, copy assignment operator，这些会在别的笔记里讨论。这里只讨论 copy constructor 和 move constructor。
+# Constructors, Assignment Operators, Destructor, Rule of 3 and Rule of 5
 
 ## Constructor
 ### 一般的 Constructor
@@ -34,6 +32,13 @@ ClassName::ClassName(// parameters)
 一个关于 copy constructor 的很好的 短视频教程（这个视频的前1/3是讲copy，后2/3是讲copy constructor）：https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=45
 
 ### Move Constructor
+```cpp
+Class(Class&& obj);
+```
+Move Constructor 的样子如上。
+* 上面的 `&&` 的意思是 RValue Reference
+* 上面的 `(...)` 里不是 `const Class&& obj`，是因为 **move 操作 会把 input object 变成 null！这一点要特别注意**
+
 Move Constructor 的目的是 **偷窃或者说挪用 他者 正在拥有的 allocated memory**，所以就不必再 allocate 一遍 memory。这样就：
 * 节约了space
 * 避免了对各种东西进行copy的时间消耗
@@ -54,6 +59,21 @@ Person(Person && other) { // The input param is a RValue Reference
     ...
 }
 ```
+
+## Assignment Operators
+Copy Assignment Operator 和 Move Assignment Operator 都是 overload assignment operator (即`=`).
+
+### Copy Assignment Operator
+
+
+
+### Move Assignment Operator
+```cpp
+Class& operator = (Class&& obj);
+```
+Move Assignment Operator 的样子如上。
+* 上面的 `&&` 的意思是 RValue Reference
+* 上面的 `(...)` 里不是 `const Class&& obj`，是因为 **move 操作 会把 input object 变成 null！这一点要特别注意**
 
 
 ## Destructor
@@ -82,29 +102,20 @@ ClassName::~ClassName()
 
 如果要定义以下三者其中任一个，则需要把这3个都定义了：
 * Destructor
-```cpp
-~Class();
-```
+  ```cpp
+  ~Class();
+  ```
 * Copy Constructor
-```cpp
-Class(const Class& obj);
-```
+  ```cpp
+  Class(const Class& obj);
+  ```
 * Copy Assignment Operator
   ```cpp
   Class& operator = (const Class& obj);
   ```
 
 ## Rule of Five in Class Definition
-With `move` semantics, the "Rule of 3" becomes "Rule of 5", since:
-```cpp
-// Move Constructor
-// 1. `&&` 的意思是 RValue Reference
-// 2. 括号里没有 `const` 是因为 move 会把 input param 变成 null
-Class(Class&& obj);
+With `move` semantics, the "Rule of 3" becomes "Rule of 5", 就是说除了上面的3个，还需要下面的2个：
+* Move Constructor
+* Move Assignment Operator
 
-// Move Assignment Operator
-// 1. 这个 move assignment operator 和 copy assignment operator 很相像，都是 overwrite `=`
-// 2. `&&` 的意思是 RValue Reference
-// 3. 括号里没有 `const` 是因为 move 会把 input param 变成 null
-Class& operator = (Class&& obj);
-```
