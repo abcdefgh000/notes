@@ -36,10 +36,12 @@ Class(const Class& obj);
 ```  
 Copy Constructor 的样子如上。Copy Constructor 的用法有如下2种，其本质都是一样的：
 ```cpp
+// 方式 1：
 // 注意它左边带了`Class`，如果只有`object2 = object1;` 那就是在call copy assignment operator
 Class object2 = object1;
 ```
 ```cpp
+// 方式 2：
 Class object2(object1);
 ```
 
