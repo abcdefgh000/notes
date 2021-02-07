@@ -29,6 +29,11 @@ ClassName::ClassName(// parameters)
 ```
 
 ### Copy Constructor
+```cpp
+Class(const Class& obj);
+```  
+Copy Constructor 的样子如上。
+
 一个关于 copy constructor 的很好的 短视频教程（这个视频的前1/3是讲copy，后2/3是讲copy constructor）：https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=45
 
 ### Move Constructor
@@ -64,7 +69,10 @@ Person(Person && other) { // The input param is a RValue Reference
 Copy Assignment Operator 和 Move Assignment Operator 都是 overload assignment operator (即`=`).
 
 ### Copy Assignment Operator
-
+```cpp
+Class& operator = (const Class& obj);
+```
+Copy Assignment Operator 的样子如上.
 
 
 ### Move Assignment Operator
@@ -117,5 +125,10 @@ ClassName::~ClassName()
 ## Rule of Five in Class Definition
 With `move` semantics, the "Rule of 3" becomes "Rule of 5", 就是说除了上面的3个，还需要下面的2个：
 * Move Constructor
+  ```cpp
+  Class(Class&& obj);
+  ```
 * Move Assignment Operator
-
+  ```cpp
+  Class& operator = (Class&& obj);
+  ```
