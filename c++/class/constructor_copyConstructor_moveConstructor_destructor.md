@@ -1,6 +1,6 @@
 # Constructor, Copy Constructor, Move Constructor, Destructor, Rule of 3 and Rule of 5
 
-关于 copy operator 和 assignment operator，在别的笔记里记录。这里只记录 copy constructor 和 move constructor。
+这篇笔记不讨论 assignment operator, copy assignment operator，这些会在别的笔记里讨论。这里只讨论 copy constructor 和 move constructor。
 
 ## Constructor
 ### 一般的 Constructor
@@ -85,13 +85,14 @@ ClassName::~ClassName()
 ```cpp
 ~Class();
 ```
+* Copy Constructor
 ```cpp
-// Copy Constructor
 Class(const Class& obj);
-
-// Copy Assignment Operator
-Class& operator = (const Class& obj);
 ```
+* Copy Assignment Operator
+  ```cpp
+  Class& operator = (const Class& obj);
+  ```
 
 ## Rule of Five in Class Definition
 With `move` semantics, the "Rule of 3" becomes "Rule of 5", since:
