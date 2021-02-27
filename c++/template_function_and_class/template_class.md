@@ -41,10 +41,27 @@ void StudentRecord<T>::setId(int idIn) {
 }
 ```
 
-## Instantiae a Template Class
+To instantiae an object of the above Template Class:
 ```cpp
 StudentRecord<int> student1(98);
 StudentRecord<float> student2(99.5);
 
 ...
 ```
+
+## 一个 template class 里，既有 typename 参数，又有 primitive type 参数的情况：
+```cpp
+template<typename T, int size>
+class CustomArray {
+ private:
+  T internal_array_[size];
+ public:
+  int GetSize() const { return size; }
+};
+
+int main() {
+  CustomArray<int, 5> custom_array;
+  std::cout << custom_array.GetSize() << std::endl;  // 5
+}
+```
+
