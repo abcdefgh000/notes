@@ -10,4 +10,4 @@
 
 ## `new`
 
-`new` key word 就是 call 了 `malloc` function。
+`new` key word 其实 就是 call 了 `malloc` ("memory allocation") function。
