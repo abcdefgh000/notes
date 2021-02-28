@@ -2,7 +2,7 @@
 
 A Smart Pointer is a Template Class that uses Operator Overloads to provide the functionality of a pointer, while providing improved memory management and safety. A Smart Pointer is essentially a wrapper around a standard bare C language pointer. 这样就能让他实现上述优点的同时，还是可以 operate as close as a standard pointer.
 
-使用 smart pointer 以后，基本可以不再使用 `new` 和 `delete` key words in C++.
+Smart pointers 其实也是用了 `new` key word，只是在 `new` 的外面包了一层，所以 smart pointer 定义出来的 variables 也是在 heap memory 里的。 使用 smart pointer 以后，基本可以不再使用 `new` 和 `delete` key words.
 
 Smart Pointer 里面比较基本的是 "Scoped Pointer"，unique pointer 也是 scoped pointer 进化而来的。现在好像更多地用 unique pointer 或者 shared pointer 了，不怎么用 scoped pointer 了。自己手写一个 scoped pointer 的话，是这个样子：
 ```cpp
