@@ -20,3 +20,4 @@ So, once the scope in which you've allocated that stack memory ends, all the mem
 
 ## Heap Memory
 
+heap 慢 主要不是因为它的内存不连续，而是因为它要 allocate memory，这是它慢的主要原因。
