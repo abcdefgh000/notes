@@ -1,8 +1,23 @@
 # Unique Pointer
 
 ## Overview
-* Prefer creating unique pointer with `std::make_unique<MyClass>(obj1)` or `absl::make_unique<MyClass>(obj1)` instead of using `new`
-* Prefer using the `=` operator instead of `reset` to reassign the unique pointer
+### Create unique pointerwith
+最好用
+```cpp
+auto class1 = std::make_unique<MyClass>(100)
+```
+or 
+```cpp
+auto class1 = absl::make_unique<MyClass>(100)
+```
+
+不要用 `new` 或者：
+```cpp
+std::unique_ptr<MyClass> transformer_factory(100);
+```
+
+## Reassign unique pointer
+Prefer using the `=` operator instead of `reset` to reassign the unique pointer
 
 ```cpp
 {
