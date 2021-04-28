@@ -16,6 +16,6 @@ filename2
 filename3
 ...
 ```
-更具体的说明 见我 关于 string operations 的 note。
+关于 `absl::StrJoin(...)` 更具体的说明 见我 关于 string operations 的 note。
 
 
