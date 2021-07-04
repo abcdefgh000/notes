@@ -8,12 +8,17 @@ Function pointer is a way to assign a function to a variable. The **name of a fu
 
 using namespace std;
 
+void Enough() {
+    std::cout << "I've had enough!" << std::endl;
+}
+
 int TwoSum(int num1, int num2) {
     return num1 + num2;
 }
 
 int main() {
-    // Declare the function pointer.
+    // Declare the function pointers.
+    void (*fn_ptr_enough)() = Enough;
     int (*fn_ptr_two_sum)(int, int) = TwoSum;
     
     // 或者也可以这样，语法上简单很多，意义和上面的一行 完全一样
