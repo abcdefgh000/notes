@@ -6,6 +6,8 @@ Simple code example:
 static bool done = false;
 
 void DoSomething() {
+  std::cout << "Started thread id = : " << std::this_thread::get_id() << std::endl;
+  
   while (!done) {
     std::cout << "Not done yet!" << std::endl;
     std::this_thread::sleep_for(1s);
