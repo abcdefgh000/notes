@@ -1,6 +1,6 @@
 # Function Pointer
 
-The **name of a function** is actually **the pointer to the function**!
+Function pointer is a way to assign a function to a variable. The **name of a function** is actually **the pointer to the function**!
 
 ## Declare the Function Pointer, and use this Pointer to call the Function
 ```cpp
