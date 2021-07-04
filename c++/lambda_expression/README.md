@@ -2,6 +2,8 @@
 
 ## Overview
 
+Where ever you use a function pointer, you can use a lambda.
+
 Lambda Expression (或称之为 Lambda Function) 是：
 * 首先，它是一个 没有名字的 function (anonymous function)
 * 然后，它可以做到 refer to identifiers outside of its own (function) scope
