@@ -8,6 +8,7 @@ static bool stop = false;
 void DoSomething() {
   while (!stop) {
     std::cout << "Not stopped yet!" << std::endl;
+    std::this_thread::sleep_for(1s);
   }
 }
 
