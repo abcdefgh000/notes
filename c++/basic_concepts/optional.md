@@ -28,3 +28,9 @@ int main() {
   }
 }
 ```
+
+继续上面的例子，举另外一种例子：
+```cpp
+std::string result = maybe_student_name.value_or("Got no name!");
+```
+上面这样的做法，就是设一个默认的返回值，如果 optional 没有get任何东西，就返回这个 默认值。
