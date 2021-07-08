@@ -1,5 +1,10 @@
 # String Operations
 
+## 查看 一个 string 里是否含有 某个 sub string
+```cpp
+absl::StrContains(look_in_string, look_for_sub_string)
+```
+
 ## 用 自定义的 间隔符 把一个 container 里的 elements 串起来
 ```cpp
 std::vector<std::string> names = ...
