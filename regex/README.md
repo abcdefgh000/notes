@@ -27,3 +27,15 @@
     * 可以 match：1a, 1a5, 1aT67X8...，
     * 不能 match：1b, 2a, 10a...
 
+* `$`
+  * Matches the adjacent chars at the end of a string
+  * 例如：`$1a`：
+    * 可以 match：1a, 01a, UI90oPx1a...，
+    * 不能 match：1b, 2a, XY10a...
+
+## Groups
+* `()`
+  * 用途1：Matches the enclosed chars in exact order, anywhere in a string
+    * 例如：`(1a)` Matches: 1a, B1a, 1aT, tY1aXUI9...
+  * 用途2：Group other expressions
+    * 例如：`([0-9]|[a-z])` 意思是 任何 一位数字 或 一个小写字母
