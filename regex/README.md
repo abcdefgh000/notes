@@ -1,8 +1,6 @@
-# Regex Basics
+# Regex meta-characters
 
-## Regex meta-characters
-
-### Wildcards
+## Wildcards
 * `.`
   * 代表 任意 1个 字母，数字 或 符号
 
@@ -21,4 +19,11 @@
 * `|`
   * 意思是 `OR`
   * 例如：`1|10` 即 1 或 10
+
+## Anchors
+* `^`
+  * Matches the adjacent chars at the beginning of a string
+  * 例如：`^1a`：
+    * 可以 match：1a, 1a5, 1aT67X8...，
+    * 不能 match：1b, 2a, 10a...
 
