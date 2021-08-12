@@ -54,3 +54,7 @@
 * `\`
   * To match a metacharacter, escape it with a backslash `\`
   * 例如：`\+` matches a literal "+" character
+
+# Regex expressions 的 组合
+* 如果 regex expression `e1` matches `a`，regex expression `e2` matches `b`，则 `e1e2` matches `ab`
+* `e1 | e2` 就是 `a` OR `b`
