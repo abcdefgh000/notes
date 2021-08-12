@@ -59,7 +59,7 @@
   * 例如：`\+` matches a literal "+" character
 
 # Regex expressions 的 组合
-## Combination
+## Concatenation
 如果 regex expression `e1` matches `a`，regex expression `e2` matches `b`，则 `e1e2` matches `ab`
 
 ## Alternation
