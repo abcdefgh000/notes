@@ -46,6 +46,8 @@
 * `[]`
   * 用途1：Matches the enclosed chars in ANY order, anywhere in a string
     * 例如：`[1ab]` Matches: 1ab, b1a, 1abT, tY1baXUI9...
+    * [ab] 到底是 a 和 b 都要有，还是只能有一个？？？？[a-zA-Z] 到底是什么意思？？？？在 RE2 和 外网的 regex 都试试看！写 unit test！！！
+    * 写案例：(|('|")) 表示 “无”，记录下如何表示 “无”！！！！！
   * 用途2：和 `-` 一起表达一个范围的字符。见下文
 
 * `-`
