@@ -52,6 +52,5 @@
 ## Escape
 
 * `\`
-  * 表示它后面紧贴着的那个 char 是 **字面意思**，不是任何 regex metacharacter
-  * 例如：`\.` 的意思就是一个纯粹的 单 `.`，这里的 “.” 不再是一个 wildcard
-
+  * To match a metacharacter, escape it with a backslash `\`
+  * 例如：`\+` matches a literal "+" character
