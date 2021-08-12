@@ -64,3 +64,16 @@
 
 ## Alternation
 如果 regex expression `e1` matches `a`，regex expression `e2` matches `b`，则 `e1 | e2` 就是 `a` OR `b`
+
+# Regex expressions 的 优先级（precedence）
+
+The operator precedence, 从最强到最弱：
+1. Explicit parentheses can be used to force different meanings, just as in arithmetic expressions
+2. Repetition operators
+3. Concatenation
+4. Alternation
+
+Some examples:
+* `ab|cd` is equivalent to `(ab)|(cd)`
+* `ab*` is equivalent to `a(b*)`
+
