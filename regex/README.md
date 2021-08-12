@@ -1,6 +1,8 @@
 # Regex meta-characters
 
 ## Wildcards
+### Repetition operators
+有3种：
 * `.`
   * 代表 任意 1个 字母，数字 或 符号
 
@@ -16,6 +18,7 @@
   * 代表 它前面紧贴的 character 0到无数 次
   * 例如：`10*` 可以是 1, 10, 100, 1000, 10000...
 
+### OR
 * `|`
   * 意思是 `OR`
   * 例如：`1|10` 即 1 或 10
@@ -56,5 +59,8 @@
   * 例如：`\+` matches a literal "+" character
 
 # Regex expressions 的 组合
-* 如果 regex expression `e1` matches `a`，regex expression `e2` matches `b`，则 `e1e2` matches `ab`
-* `e1 | e2` 就是 `a` OR `b`
+## Combination
+如果 regex expression `e1` matches `a`，regex expression `e2` matches `b`，则 `e1e2` matches `ab`
+
+## Alternation
+如果 regex expression `e1` matches `a`，regex expression `e2` matches `b`，则 `e1 | e2` 就是 `a` OR `b`
