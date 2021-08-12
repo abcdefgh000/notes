@@ -39,3 +39,19 @@
     * 例如：`(1a)` Matches: 1a, B1a, 1aT, tY1aXUI9...
   * 用途2：Group other expressions
     * 例如：`([0-9]|[a-z])` 意思是 任何 一位数字 或 一个小写字母
+
+* `[]`
+  * 用途1：Matches the enclosed chars in ANY order, anywhere in a string
+    * 例如：`[1ab]` Matches: 1ab, b1a, 1abT, tY1baXUI9...
+  * 用途2：和 `-` 一起表达一个范围的字符。见下文
+
+* `-`
+  * Creates a range of characters within brackets `[]` to match, anywhere in a string
+    * 例如：[0-9] 表示 0到9之中的任何一个 1位数字
+
+## Escape
+
+* `\`
+  * 表示它后面紧贴着的那个 char 是 **字面意思**，不是任何 regex metacharacter
+  * 例如：`\.` 的意思就是一个 单 `.`，这里的 . 不再是一个 wildcard
+
