@@ -40,7 +40,8 @@
 * `()`
   * 用途1：表示一个 **capturing group**
     * 例如：
-      * `(1a)` Matches: 1a, B1a, 1aT, tY1aXUI9...
+      * `(1a)` Matches: 1a, B1a, 1aT, tY1aXUI9... 《=== 自己写 unit test！看会 match 后面这些 非 1a 的么？？？
+      * `(1a)+` Matches: 1a, 1a1a, 1a1a1a... <=== 还能 match eee1aiii 么？我自己写个 unit test！！！
       * `(a-z0-9)` 表示 a-z 中 取一个 char，并且紧贴着后面 再在 0-9 之中 取一个 char，比如 b8 会被 match 上 <==== 我自己写个 unit test ！！！！！《==== 可能是 不对的！！！
       * a-z0-9 -- Can be captured by (a-z0-9) and then can be referenced in a replacement and/or later in the expression. 《== 按这个 更正！！！
       * (a-z0-9) -- Explicit capture of a-z0-9. No ranges.  《==== 按这个更正！！！
@@ -53,7 +54,7 @@
       * `[ab]` 是 a 或 b <=== 我自己写个unit test 看一下！！！
       * `[a-z0-9]` 是 a-z 中的一个 char **或者** 0-9 中的一个 char <==== 自己写 unit test 测一下！！！
       * 到底是 a 和 b 都要有，还是只能有一个？？？？[a-zA-Z] 到底是什么意思？？？？在 RE2 和 外网的 regex 都试试看！写 unit test！！！
-    * 写案例：(|('|")) 表示 “无”，记录下如何表示 “无”！！！！！
+    * 写案例：(|('|")) 表示 “无”，记录下如何表示 “无”！！！！！<======
 
 * `-`
   * Creates a range of characters within brackets `[]` to match, anywhere in a string
