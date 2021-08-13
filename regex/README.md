@@ -48,7 +48,7 @@
         * 就是说，- 符号 在 () 里是没有意义的是么？必须在 [] 里 - 才算是个 metacharacter？？？<=== test!!
       * metacharacter 在 `()` 里不会被视为 字面意义上的字符，还是会保持它们的 metacharacter 的 特殊意义！<=== 写 unit test！！！
         * 比如 `(\s+)` 是 空格 重复 1 到 N 次 <==== 写 unit test！！！
-        * `(a-z|0-9)` 会如何？里面的 | 会是 OR 还是 一般意义上的 竖直线？？<==== test!!!
+        * `(a-z|0-9)` 会如何？里面的 | 是 OR <==== test!!!
   * 用途2：Group other expressions
     * 例如：`([0-9]|[a-z])` 意思是 任何 一位数字 或 一个小写字母
 
