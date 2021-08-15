@@ -1,4 +1,15 @@
 # Regex meta-characters
+A regex usually comes within this form: `/abc/`, where the search pattern 被 2个 `/` 包围起来。
+
+## Flags
+在 regex 的 第二个 `/` 的后面，we can specify a flag with these values (we can also combine them each other):
+* `g` (global)
+  * Does not return after the first match, restarting the subsequent searches from the end of the previous match
+* `m` (multi-line)
+  * When enabled `^` and `$` will match the start and end of a line, instead of the whole string
+* `i` (insensitive)
+  * Makes the whole expression case-insensitive (for instance `/aBc/i` would match `AbC`)
+
 
 ## Wildcards
 ### Repetition operators
@@ -92,6 +103,7 @@
     * `\w` 表示 一个 alphanumeric char 或 underscore
     * `\n` 表示 new line
     * `\t` 表示 Tab 
+    * `\r` 表示 回车
 
 # Regex expressions 的 组合
 ## Concatenation
@@ -112,3 +124,6 @@ Some examples:
 * `ab|cd` is equivalent to `(ab)|(cd)`
 * `ab*` is equivalent to `a(b*)`
 
+
+# References
+* https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
