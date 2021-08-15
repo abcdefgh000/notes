@@ -87,8 +87,10 @@
   * 用途1：To match a **metacharacter**, escape it with a backslash `\`
     * 例如：`\+` matches a literal "+" character，如果没有这个 `\` 在前面，`+` 就会被视为一个 metacharacter 而非一个 加号
   * 用途2：和某些字母组合在一起，有特殊作用，比如：
-    * `\n` 表示 new line
     * `\s` 表示 空格 space
+    * `\d` 表示 一个 一位数字
+    * `\w` 表示 一个 alphanumeric char 或 underscore
+    * `\n` 表示 new line
     * `\t` 表示 Tab 
 
 # Regex expressions 的 组合
