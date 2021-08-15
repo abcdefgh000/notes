@@ -18,6 +18,14 @@
   * 代表 它前面紧贴的 character 0到无数 次
   * 例如：`10*` 可以是 1, 10, 100, 1000, 10000...
 
+还有一种 特殊的 符号：`{}`，有的地方提到它，有的没有提到，不知道是不是在某些 Regex 体系下它不可用？
+* `{}`
+  * `ab{3}`: Matches a string that has `a` followed by 3 `b`
+  * `ab{3,}`: Matches a string that has `a` followed by 3 or more `b`
+  * `ab{1,6}`: Matches a string that has `a` followed by 1 to 6 `c`
+  * `a(bc){2,4}`: Matches a string that has `a` followed by 2 to 4 `bc`
+
+
 ### OR
 * `|`
   * 意思是 `OR`
@@ -28,13 +36,18 @@
   * Matches the adjacent chars at the beginning of a string
   * 例如：`^1a`：
     * 可以 match：1a, 1a5, 1aT67X8...，
-    * 不能 match：1b, 2a, 10a...
 
 * `$`
   * Matches the adjacent chars at the end of a string
   * 例如：`$1a`：
     * 可以 match：1a, 01a, UI90oPx1a...，
-    * 不能 match：1b, 2a, XY10a...
+
+* `^foo$`
+  * Exact match to `foo`
+
+* `foo`
+  * Match 任何 stirng that has substring `foo` (anywhere in it).
+
 
 ## Groups
 * `()`
