@@ -1,4 +1,5 @@
-# Regex meta-characters
+# Regex Overview
+
 A regex usually comes within this form: `/abc/`, where the search pattern 被 2个 `/` 包围起来。
 
 ## Flags
@@ -10,6 +11,8 @@ A regex usually comes within this form: `/abc/`, where the search pattern 被 2�
 * `i` (insensitive)
   * Makes the whole expression case-insensitive (for instance `/aBc/i` would match `AbC`)
 
+
+# Regex metacharacters
 
 ## Wildcards
 ### Repetition operators
