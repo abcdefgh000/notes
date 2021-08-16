@@ -82,22 +82,19 @@ A regex usually comes within this form: `/abc/`, where the search pattern 被 2�
 * `[]`
   * `[]` 表示一个 **character class**，在这个 class 里 **取且仅取一个 char**。例如：
     * `[ab]` 是 a 或 b
-  * **metacharacter 在 `[]` 里 都会被视为 字面意义上的字符！比如：
+  * **metacharacter 在 `[]` 里 都会被视为 字面意义上的字符！** 比如：
     * `+` 在 `[]` 里就是一个 加号！不是 “1次或多次” 的意思了**。例如：
       * `[a+]` 是 "a" 或者 加号，但不会 match "aa" 或 "aaa" 之类的
     * () 在 [] 里 也只是 "括号" 的意思，而不再有 特殊含义，例如：
       * `[(ab)]` 会 match "(" 或 "a" 或 "b" 或 ")"，不会 match "ab" 等
-
-
-
-
-        * | 在 [] 里也只是 竖直线 的意思 <=== test！！！
-      * `[a-z0-9]` 是 a-z 中的一个 char **或者** 0-9 中的一个 char <==== 自己写 unit test 测一下！！！
-      * 到底是 a 和 b 都要有，还是只能有一个？？？？[a-zA-Z] 到底是什么意思？？？？在 RE2 和 外网的 regex 都试试看！写 unit test！！！
-    * 写案例：
+    * | 在 [] 里也只是 竖直线 的意思，不是 OR 的意思，例如：
+      * `[a|b]` 会 match "a" 或 "b" 或 "|"，不会 match "a|b"
+  * **特别注意！`-` 在 `[]` 里的地位是特殊的！当它处在 `[]` 里的时候，表达的是“范围”的意思，不是 字面上的“连字号”的意思**。例如：
+    * `[a-z0-9]` 是 a-z 中的一个 char 或者 0-9 中的一个 char。它会 match "a" 或 "0"，不会 match "a0" 或 "-"
+    * 同理，`[a-zA-Z]` 表示 一个 小写字母 或者 一个 大写字母
 
 * `-`
-  * Creates a range of characters within brackets `[]` to match, anywhere in a string
+  * **特别注意！`-` 仅仅当它处在 `[]` 里面的时候，它才表达“范围” 的意义！它才是一个特殊字符！** Creates a range of characters within brackets `[]` to match, anywhere in a string
     * 例如：[0-9] 表示 0到9之中的任何一个 1位数字
 
 ## Escape
