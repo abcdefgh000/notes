@@ -67,21 +67,17 @@ A regex usually comes within this form: `/abc/`, where the search pattern 被 2�
 * `()`
   * metacharacter 在 `()` 里不会被视为 字面意义上的字符，还是会保持它们的 metacharacter 的 特殊意义（但是 `-` 在 `()` 里就表示字面的 "-" 的意思！详见下文），例如：
     * `(a+)` 是 "a" 重复 1 到 N 次
-    * `(a|b)` 是 "a" OR "b"
-  * 特别注意：`-` 在 `()` 里就表示 字面的 "-" 的意思！例如：
+    * `(a|b)` 是 "a" OR "b"，`(ab|cd)` 是 "ab" OR "cd"
+  * **特别注意！`-` 在 `()` 里就表示 字面的 "-" 的意思！** 例如：
     * `(a-z0-9)` 会 match 字符串 "a-z0-9"，它不会 match "a0" 或者 "a" 或者 "0"
     * `(a-z|0-9)` 会 match 字符串 "a-z" 或者 "0-9"，它不会 match 字符串 "a-z|0-9"，因为 `|` 在 `()` 里还是表示 OR 的意思，不是字面的 "|"
   * 用途1：表示一个 **capturing group**
     * 例如：
       * `(1a)` Matches: 1a, B1a, 1aT, tY1aXUI9...
       * `(1a)+` Matches: 1a, 1a1a, 1a1a1a, 1a1aB, X1a1a1aTY...
-      * `(a-z0-9)` 表示 a-z 中 取一个 char，并且紧贴着后面 再在 0-9 之中 取一个 char，比如 b8 会被 match 上 <==== 我自己写个 unit test ！！！！！《==== 可能是 不对的！！！
-      * a-z0-9 -- Can be captured by (a-z0-9) and then can be referenced in a replacement and/or later in the expression. 《== 按这个 更正！！！
-      * (a-z0-9) -- Explicit capture of a-z0-9. No ranges.  《==== 按这个更正！！！(a-z0-9) will match the exact string "a-z0-9"
-        * 就是说，- 符号 在 () 里是没有意义的是么？必须在 [] 里 - 才算是个 metacharacter？？？<=== test!!
-
-  * 用途2：Group other expressions
-    * 例如：`([0-9]|[a-z])` 意思是 任何 一位数字 或 一个小写字母
+  * 用途2：Group expressions 以 改变 或 突出 执行优先级
+    * 例如：`(|('|"))` 表示 **无** 或 单引号 或 双引号
+      * **特别注意！上面的例子里 如何表达 “无” 的做法**
 
 * `[]`
   * 表示一个 **character class**，在这个 class 里 **取且仅取一个 char**。
@@ -93,7 +89,7 @@ A regex usually comes within this form: `/abc/`, where the search pattern 被 2�
         * | 在 [] 里也只是 竖直线 的意思 <=== test！！！
       * `[a-z0-9]` 是 a-z 中的一个 char **或者** 0-9 中的一个 char <==== 自己写 unit test 测一下！！！
       * 到底是 a 和 b 都要有，还是只能有一个？？？？[a-zA-Z] 到底是什么意思？？？？在 RE2 和 外网的 regex 都试试看！写 unit test！！！
-    * 写案例：(|('|")) 表示 “无”，记录下如何表示 “无”！！！！！<======
+    * 写案例：
 
 * `-`
   * Creates a range of characters within brackets `[]` to match, anywhere in a string
