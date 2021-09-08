@@ -5,10 +5,10 @@
   =REGEXEXTRACT(A1, "(.+)/")
   ```
     * 举例：如果 A1 cell 是：
-    ```
-    /aaaaaaaa/bbb/cc
-    ```
-    则 上面的 cmd 会转化为：
-    ```
-    /aaaaaaaa/bbb
-    ```
+      ```
+      /aaaaaaaa/bbb/cc
+      ```
+      则 上面的 cmd 会转化为：
+      ```
+      /aaaaaaaa/bbb
+      ```
