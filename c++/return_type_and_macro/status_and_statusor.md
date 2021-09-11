@@ -43,7 +43,7 @@ foo.value()
 ```
 
 ## Call StatusOr 的 value 的 member function
-用：
+用 `->`：
 ```cpp
 absl::StatusOr<xxx> foo = ...
 if (foo.ok()) {
