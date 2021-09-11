@@ -8,7 +8,7 @@
 * 可用于 以下的 返回类型的函数内部:
   * `absl::Status`
   * `absl::StatusOr<...>`
-  * 
+  
 ### RET_CHECK
 ```cpp
 RET_CHECK(bool)
