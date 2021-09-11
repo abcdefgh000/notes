@@ -1,5 +1,11 @@
 # return macros
 
+## CHECK 系列
+* 如果 fail，会 break code
+
+## ASSERT 系列
+* 如果 fail，会 break code
+
 ## RET_CHECK 系列
 * Returns `Status`
 * 可用于:
