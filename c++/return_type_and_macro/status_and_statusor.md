@@ -11,9 +11,11 @@ if (absl::IsNotFound(status)) {
 ```
 
 ## Create 一个 特定 type 和 error message 的 status 用于 return 或 测试
+用于 return：
 ```cpp
 return absl::DataLossError("This is a funny error");
 ```
+用于 testing：
 ```cpp
 absl::Status input_status_for_testing = absl::DataLossError("This is a funny error");
 ...
