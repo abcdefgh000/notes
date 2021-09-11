@@ -1,7 +1,8 @@
 # Status and StatusOr
 
 
-## 判断 Status 是不是 某种特定类型的 Error
+## 判断一个 error status 的 error type
+### 在 非 test code 里的 判断方法
 比如，判断一个 status 是否是 `NOT_FOUND` Error：
 ```cpp
 auto status = ...
@@ -9,10 +10,19 @@ if (absl::IsNotFound(status)) {
   ...
 }
 ```
-古法（现在别这么用了）：
+别这么用（在 test 里才用到这种 enum，见下文）：
 ```cpp
-status.code() == 某种 error type enum
+status.code() == absl::StatusCode::kDataLoss
 ```
+
+### 在 test code 里的 判断方法
+在 test 里不仅能判断 error type，还能判断 error message 的 substring：
+```cpp
+EXPECT_THAT(SomeFunctionThatReturnsStatus(...),
+            StatusIs(absl::StatusCode::kInternal, HasSubstr("error message sub string")));
+
+```
+
 
 ## 判断 StatusOr 是否是 ok
 直接用：
