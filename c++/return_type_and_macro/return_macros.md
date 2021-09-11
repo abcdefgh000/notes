@@ -19,28 +19,28 @@ RET_CHECK_OK(status)
 
 ## EXPECT 系列 (用于 tests)
 * 如果 fail，test 还会继续进行下去
-
-### EXPECT_THAT
 * **只要有可能，尽量都用 `EXPECT_THAT`。** 因为一旦 test fail，`EXPECT_THAT` 所能提供的 报错信息和分析是最详尽的。
- 
-* `EXPECT_THAT`优于 `EXPECT` 家族中的所有其他类别，比如 `EXPECT_EQ`, `EXPECT_TRUE`... 
-  * 替代 `EXPECT_TRUE(...)`
-    ```cpp
-    // 这样好
-    EXPECT_THAT(container1, IsEmpty());
-    EXPECT_THAT(container2, Not(IsEmpty()));
+* 
+### EXPECT_THAT
+`EXPECT_THAT`优于 `EXPECT` 家族中的所有其他类别，比如 `EXPECT_EQ`, `EXPECT_TRUE`... 
+
+* 替代 `EXPECT_TRUE(...)`
+  ```cpp
+  // 这样好
+  EXPECT_THAT(container1, IsEmpty());
+  EXPECT_THAT(container2, Not(IsEmpty()));
     
-    // 这样不好
-    EXPECT_TRUE(container1.empty());
-    ```
-  * 替代 `EXPECT_EQ(...)`
-    ```cpp
-    // 这样好
-    EXPECT_THAT(container1, SizeIs(5));
-    
-    // 这样不好
-    EXPECT_EQ(container1.size(), 5);
-    ```
+  // 这样不好
+  EXPECT_TRUE(container1.empty());
+  ```
+* 替代 `EXPECT_EQ(...)`
+  ```cpp
+  // 这样好
+  EXPECT_THAT(container1, SizeIs(5));
+  
+  // 这样不好
+  EXPECT_EQ(container1.size(), 5);
+  ```
     
 * `EXPECT_THAT` 也可取代 `ASSERT_OK_AND_ASSIGN`，举例：
   ```cpp
