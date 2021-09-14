@@ -31,7 +31,8 @@ RET_CHECK_OK(status)
   ```
 * 如果要在 fail 的时候，在 error status 的 error message **后面 append** 一段 自定义的 string，用 `_.SetPrepent() << `：
   ```cpp
-  ASSIGN_OR_RETURN(auto foo, GetFoo(bar), _.SetPrepend() << "Failed to get Foo for Bar: " << bar);
+  ASSIGN_OR_RETURN(auto foo, GetFoo(bar), 
+                   _.SetPrepend() << "Failed to get Foo for Bar: " << bar);
   ```
   
 * 如果要在 fail 的时候，在 error status 的 error message 后面 append 一段 自定义的 string，然后再把原 error status 也 log 出来，用 `_.SetPrepent().LogError() << `：
