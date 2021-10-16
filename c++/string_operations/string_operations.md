@@ -17,3 +17,10 @@ element2
 element3
 ...
 ```
+
+## Check 一个 string 的 prefix 和 suffix
+```cpp
+bool has_prefix = absl::StartsWith(target_string, prefix);
+
+bool has_suffix = abls::EndsWith(target_string, suffix);
+```
