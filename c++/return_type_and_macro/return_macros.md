@@ -92,5 +92,7 @@ RET_CHECK_OK(status)
   * 比如说 create directory，读写文件 等
 
 ### ASSERT_OK_AND_ASSIGN
+* `ASSERT_OK_AND_ASSIGN` is a test counterpart of `ASSIGN_OR_RETURN`.
+  * 如果 fail，这个 macro 不会 return error status，它会生成一个 test failure，然后 returns (void) from the current function, which must (also) have a void return type.
 
 
