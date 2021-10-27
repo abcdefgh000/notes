@@ -81,6 +81,7 @@ RET_CHECK_OK(status)
   ```
 
 ### EXPECT_DEATH
+* EXPECT_DEATH 是比较 expensive 的一个语句，在 test 里面能不用就不用。
 * 如果要测 `CHECK(...)` 的 failure，就用 EXPECT_DEATH:
   ```cpp
   EXPECT_DEATH(SomeFunction(some_invalid_input), "");  // 最后的 "" 应该是放 expected error message 的地方
@@ -89,5 +90,7 @@ RET_CHECK_OK(status)
 ## ASSERT 系列 (用于 tests）
 * 如果 fail，会 break test
   * 比如说 create directory，读写文件 等
+
+### ASSERT_OK_AND_ASSIGN
 
 
