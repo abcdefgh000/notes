@@ -1,12 +1,37 @@
 # RValue and LValue
+
+## 定义
+
+**LValue 是 拥有存储地址（也即可以 被 取地址）的东西**。RValue 是 不拥有存储地址 的东西。
+
+举例：
+
 ```cpp
 int i = 10;
 ```
 
-In the above example, `i` is an LValue and `10` is an `RValue`, we can never do `10 = i`, but actually `L/R`Value **和 左/右 完全无关**.
+In the above example, `i` is an LValue and `10` is an `RValue`, we can never do `10 = i`, 因为 i 拥有自己的地址，而 10 不可能有自己的地址。
 
-* **RValue can be moved (即 `std::move(...)`), LValue cannot be moved**
-* **LValue 能“被取地址”，RValue 不能**
+所以 `L/R`Value **和 它们处于 等号的 左/右 完全无关**，只和上面说的 “它们是否拥有地址” 有关.
+
+## RValue 可以是一个函数的返回值
+
+```cpp
+int GetAThing() {
+  return 10;
+}
+
+int main() {
+  int thing = GetAThing();
+}
+```
+在上面的例子里，`GetAThing()` 这个函数 返回了一个 RValue 10，这个 RValue 是一个 temporary value，它 has no storage，no location。
+
+然后我们 take this RValue and store it into an LValue `thing`。
+
+同上理，如果我们写 `GetAThing() = 11` 是不可以的，因为 `GetAThing()` 返回的是一个 RValue，它 没有也不可以有 自己的地址。
+
+==================
 
 关于 RValue：
 * RValues are often temporary values
