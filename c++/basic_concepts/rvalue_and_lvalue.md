@@ -1,11 +1,10 @@
 # RValue and LValue
+```cpp
+int i = 10;
+```
 
-以前：`RValue` 和 `LValue` 的 原始意思是：
-* 一个 `LValue` 可以在 `=` 的左边或者右边
-* 一个 `RValue` 只能在 `=` 的右边
-* 比如在 `int num = 7` 里：`num` 是 LValue；`7` 是 RValue。
+In the above example, `i` is an LValue and `10` is an `RValue`, we can never do `10 = i`, but actually `L/R`Value **和 左/右 完全无关**.
 
-现在：RValue 和 LValue 的意思已经变化了，**和左/右完全无关了**：
 * **RValue can be moved (即 `std::move(...)`), LValue cannot be moved**
 * **LValue 能“被取地址”，RValue 不能**
 
