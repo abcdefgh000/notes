@@ -1,6 +1,6 @@
-# RValue and LValue
+# RValue and LValue 的定义
 
-## 定义
+Great video about RValue and LValue: https://www.youtube.com/watch?v=fbYknr-HPYE&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=85&app=desktop
 
 **LValue 是 拥有存储地址（也即可以 被 取地址）的东西**。RValue 是 不拥有存储地址 的东西。
 
@@ -14,7 +14,7 @@ In the above example, `i` is an LValue and `10` is an `RValue`, we can never do 
 
 所以 `L/R`Value **和 它们处于 等号的 左/右 完全无关**，只和上面说的 “它们是否拥有地址” 有关.
 
-## RValue 可以是一个函数的返回值
+# RValue 可以是一个函数的返回值
 
 ```cpp
 int GetAThing() {
@@ -30,6 +30,69 @@ int main() {
 然后我们 take this RValue and store it into an LValue `thing`。
 
 同上理，如果我们写 `GetAThing() = 11` 是不可以的，因为 `GetAThing()` 返回的是一个 RValue，它 没有也不可以有 自己的地址。
+
+# 一个函数 可以返回 LValue，即返回一个 LValue reference
+如下这么做就可以返回一个 LValue reference：
+
+```cpp
+int& GetAThing() {
+  static int a_thing = 10;
+  return a_thing;
+}
+
+int main() {
+  GetAThing() = 11;  // <=== This is ok to do now!
+}
+```
+
+# An LValue can be created by an RValue
+
+Example:
+```cpp
+void SetValue(int value) {
+  int hey = value;
+}
+
+int main() {
+  SetValue(10);  // 10 is an RValue, it's used to create an LValue `hey` inside `SetValue(...)`.
+}
+```
+
+# But we cannot create an LValue Reference from an RValue
+
+So we can only create an LValue Reference form an LValue. The following call of `SetValue(10)` does NOT work:
+
+```cpp
+void SetValue(int& value) {. // Now this function is taking an LValue Reference as param.
+  int hey = value;
+}
+
+int main() {
+  SetValue(10);  // Now this does NOT work since 10 is an RValue, it does not have an address.
+}
+```
+
+Another example that does NOT work for the same reason:
+```cpp
+int& a = 10;  // Does NOT work since 10 is an RValue that doesn't have an address.
+```
+
+# But we can create a `const` LValue Reference from an RValue
+This works (it's actually kind of a workaround):
+```cpp
+const int& a = 10;  // Works!! Since now `a` is a CONST LValue Reference.
+```
+
+What really happened here was:
+```cpp
+int temp = 10;
+const int& a = temp;
+```
+1. The Compiler creates a temporary variable with the actual storage
+2. Assign the value 10 to the tempraroy variable
+3. Assign the tempraroy variable to the `const` LValue Reference `a`.
+
+
 
 ==================
 
