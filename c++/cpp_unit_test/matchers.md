@@ -40,3 +40,11 @@ EXPECT_THAT(proto_vector1, Pointwise(Partially(EqualsProto()), summaries));
 注意！
 * `proto_vector2` 是在 `EqualsProto()` 外面的
 * `EqualsProto` 是在 `Partially()` 里面的
+
+## Check if a string element in a container ends with a certain substring
+
+```cpp
+  EXPECT_THAT(
+      file::Match("some_file_pattern", file::Defaults()),
+      IsOkAndHolds(ElementsAre(EndsWith("_test.cc"))));
+```
