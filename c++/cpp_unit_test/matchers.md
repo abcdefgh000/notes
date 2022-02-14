@@ -41,10 +41,36 @@ EXPECT_THAT(proto_vector1, Pointwise(Partially(EqualsProto()), summaries));
 * `proto_vector2` 是在 `EqualsProto()` 外面的
 * `EqualsProto` 是在 `Partially()` 里面的
 
+## Check a `StatusOr<container>` returns ok status and the elements of the container are certain values
+
+
+```cpp
+  EXPECT_THAT(
+      vector_of_filenames,
+      IsOkAndHolds(ElementsAre("filename1, filename2")));
+```
+
 ## Check if a string element in a container ends with a certain substring
 
 ```cpp
   EXPECT_THAT(
-      file::Match("some_file_pattern", file::Defaults()),
+      vector_of_filenames,
       IsOkAndHolds(ElementsAre(EndsWith("_test.cc"))));
 ```
+
+## Check a container is empty
+
+```cpp
+  EXPECT_THAT(
+      vector_of_filenames,
+      IsOkAndHolds(IsEmpty()));
+```
+
+## Check a container's size
+
+```cpp
+  EXPECT_THAT(
+      vector_of_filenames,
+      IsOkAndHolds(SizeIs(3))));
+```
+
