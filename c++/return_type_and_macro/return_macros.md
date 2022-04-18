@@ -29,17 +29,19 @@ RET_CHECK_OK(status)
   ASSIGN_OR_RETURN(auto foo, GetFoo(...));
   foo.DoSomething();
   ```
-* 如果要在 fail 的时候，在 error status 的 error message **后面 append** 一段 自定义的 string，用 `_.SetPrepent() << `：
+* 如果要在 fail 的时候，在 error status 的 error message **后面 append** 一段 自定义的 string，用 `_.SetPrepend() << ` (it seems in the latest code standard, we don't need to use SetPrepend any more?)：
   ```cpp
   ASSIGN_OR_RETURN(auto foo, GetFoo(bar), 
                    _.SetPrepend() << "Failed to get Foo for Bar: " << bar);
   ```
   
-* 如果要在 fail 的时候，在 error status 的 error message 后面 append 一段 自定义的 string，然后再把原 error status 也 log 出来，用 `_.SetPrepent().LogError() << `：
+* 如果要在 fail 的时候，在 error status 的 error message 后面 append 一段 自定义的 string，然后再把原 error status 也 log 出来，用 `_.LogError() << `：
   ```cpp
   ASSIGN_OR_RETURN(auto foo, GetFoo(bar), 
-                   _.SetPrepend().LogError() << "Failed to get Foo for Bar: " << bar << ", error status: ");
+                   _.LogError() << "Failed to get Foo for Bar: " << bar << ", error status: ");
   ```
+  
+  * There is also `_.LogWarning() << ...`
   
   
 ## EXPECT 系列 (用于 tests)
