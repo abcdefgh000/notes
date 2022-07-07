@@ -41,8 +41,16 @@ EXPECT_THAT(proto_vector1, Pointwise(Partially(EqualsProto()), summaries));
 * `proto_vector2` 是在 `EqualsProto()` 外面的
 * `EqualsProto` 是在 `Partially()` 里面的
 
-## Check a `StatusOr<container>` returns ok status and the elements of the container are certain values
+## Compare a repeated field (of protos) against a vector of protos
+```cpp
+EXPECT_THAT(some_proto.some_repeated_field(), 
+            UnorderedElementsAre(EqualsProto(expected_proto_1),
+                                 EqualsProto(expected_proto_2),
+                                 EqualsProto(expected_proto_3)));
+```
 
+
+## Check a `StatusOr<container>` returns ok status and the elements of the container are certain values
 
 ```cpp
   EXPECT_THAT(
