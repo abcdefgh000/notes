@@ -41,7 +41,7 @@ EXPECT_THAT(proto_vector1, Pointwise(Partially(EqualsProto()), summaries));
 * `proto_vector2` 是在 `EqualsProto()` 外面的
 * `EqualsProto` 是在 `Partially()` 里面的
 
-## Compare a repeated field (of protos) against a vector of protos
+## Compare a repeated field (of protos) against some specific protos
 ```cpp
 EXPECT_THAT(some_proto.some_repeated_field(), 
             UnorderedElementsAre(EqualsProto(expected_proto_1),
