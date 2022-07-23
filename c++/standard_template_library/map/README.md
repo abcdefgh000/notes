@@ -25,6 +25,15 @@ if(ages.find("Vicky") != ages.end()) {
 
 ## Loop the elements in a map
 
+### Best way: loop by `auto const& [first, second] : map`
+```cpp
+map<string, int> students = ...;
+
+for (auto const& [name, age] : students) {
+    cout << "Student " << name << " is " << age << " years old." << endl;
+}
+```
+
 ### Loop by iterator
 ```cpp
 for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
@@ -43,16 +52,6 @@ for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
 }
 ```
 
-### Loop by `:` and Pair
-```cpp
-for (pair<string, int> pair : ages) {
-    cout << age.first << ": " << age.second << endl;
-}
-```
-or use `auto` to replace the data type of `pair`:
-```cpp
-for (auto pair : people) {
-    cout << age.first << ": " << age.second << endl;
-}
-```
+
+
 
