@@ -25,11 +25,11 @@ if(ages.find("Vicky") != ages.end()) {
 
 ## Loop the elements in a map
 
-### Best way: loop by `auto const& [first, second] : map`
+### Best way: loop by `const auto& [first, second] : map`
 ```cpp
 map<string, int> students = ...;
 
-for (auto const& [name, age] : students) {
+for (const auto& [name, age] : students) {
     cout << "Student " << name << " is " << age << " years old." << endl;
 }
 ```
