@@ -1,24 +1,44 @@
-# return macros
+# Return Macros
 
-## CHECK 系列 (用于 非 test 的 code)
+## 用于 非 test 的 code
+
+### CHECK 系列
 * 如果 fail，会 break code
 
-## RET_CHECK 系列 (用于 非 test 的 code)
+### RETURN 系列
+
+#### RETURN_IF_ERROR
+```cpp
+RETURN_IF_ERROR(status);
+```
+Log error if error:
+```cpp
+RETURN_IF_ERROR(status).LogError();
+```
+
+Log some custom error message if error:
+```cpp
+RETURN_IF_ERROR(status).LogError() << "Something I " << "want to say yeah.";
+```
+
+
+### RET_CHECK 系列
 * 如果 fail，会 return 一个 `absl::Status` with code `absl::StatusCode::kInternal`，不会 break code
 * 可用于 以下的 返回类型的函数内部:
   * `absl::Status`
   * `absl::StatusOr<...>`
   
-### RET_CHECK
+#### RET_CHECK
 ```cpp
 RET_CHECK(bool)
 ```
-### RET_CHECK_OK
+#### RET_CHECK_OK
 ```cpp
 RET_CHECK_OK(status)
 ```
 
-## ASSIGN_OR_RETURN (用于 非 test 的 code)
+
+### ASSIGN_OR_RETURN
 * 如果 fail，会 return failing status。否则 会 assign value 给指定的 variable
 * 可用于 以下的 返回类型的函数内部:
   * `absl::Status`
@@ -43,12 +63,13 @@ RET_CHECK_OK(status)
   
   * There is also `_.LogWarning() << ...`
   
-  
-## EXPECT 系列 (用于 tests)
+## 用于 tests
+
+### EXPECT 系列
 * 如果 fail，test 还会继续进行下去
 * **只要有可能，尽量都用 `EXPECT_THAT`。** 因为一旦 test fail，`EXPECT_THAT` 所能提供的 报错信息和分析是最详尽的。
 
-### EXPECT_THAT
+#### EXPECT_THAT
 `EXPECT_THAT`优于 `EXPECT` 家族中的所有其他类别，比如 `EXPECT_EQ`, `EXPECT_TRUE`... 
 
 * 替代 `EXPECT_TRUE(...)`
@@ -82,18 +103,18 @@ RET_CHECK_OK(status)
   EXPECT_EQ(foo, "expected_foo_value");
   ```
 
-### EXPECT_DEATH
+#### EXPECT_DEATH
 * EXPECT_DEATH 是比较 expensive 的一个语句，会让 test 变慢很多，在 test 里面能不用就不用。
 * 如果要测 `CHECK(...)` 的 failure，就用 EXPECT_DEATH:
   ```cpp
   EXPECT_DEATH(SomeFunction(some_invalid_input), "");  // 最后的 "" 应该是放 expected error message 的地方
   ```
 
-## ASSERT 系列 (用于 tests）
+### ASSERT 系列
 * 如果 fail，会 break test
   * 比如说 create directory，读写文件 等
 
-### ASSERT_OK_AND_ASSIGN
+#### ASSERT_OK_AND_ASSIGN
 * `ASSERT_OK_AND_ASSIGN` is a test counterpart of `ASSIGN_OR_RETURN`.
   * 如果 fail，这个 macro 不会 return error status，它会生成一个 test failure，然后 returns (void) from the current function, which must (also) have a void return type.
 
