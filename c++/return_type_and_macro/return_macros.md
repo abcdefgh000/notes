@@ -37,6 +37,11 @@ RET_CHECK(bool)
 RET_CHECK_OK(status)
 ```
 
+#### RET_CHECK_EQ
+```cpp
+RET_CHECK_EA (a, b)
+```
+
 
 ### ASSIGN_OR_RETURN
 * 如果 fail，会 return failing status。否则 会 assign value 给指定的 variable
