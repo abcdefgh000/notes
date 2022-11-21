@@ -35,7 +35,7 @@ For example:
 ```cpp
 EXPECT_THAT(MyFunction(some_params), 
             IsOkAndHolds(UnorderedPointwise(EqualsProto(),
-                                            {proto1, proto2, proto3})));
+                                            {expected_proto1, expected_proto2, expected_proto3})));
 ```
 
 注意！
@@ -52,9 +52,17 @@ EXPECT_THAT(proto_vector1, Pointwise(Partially(EqualsProto()), summaries));
 ## Compare a repeated field (of protos) against some specific protos
 ```cpp
 EXPECT_THAT(some_proto.some_repeated_field(), 
-            UnorderedElementsAre(EqualsProto(expected_proto_1),
-                                 EqualsProto(expected_proto_2),
-                                 EqualsProto(expected_proto_3)));
+            UnorderedPointwise(EqualsProto(), 
+                               {expected_proto1, expected_proto2, expected_proto3)));
+```
+
+OR: the following syntax means the same thing:
+
+```cpp
+EXPECT_THAT(some_proto.some_repeated_field(), 
+            UnorderedElementsAre(EqualsProto(expected_proto1),
+                                 EqualsProto(expected_proto2),
+                                 EqualsProto(expected_proto3)));
 ```
 
 
