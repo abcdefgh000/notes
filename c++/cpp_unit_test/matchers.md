@@ -30,6 +30,14 @@ EXPECT_THAT(proto1, Partially(EqualsProto(proto2)));
 ```cpp
 EXPECT_THAT(proto_vector1, Pointwise(EqualsProto(), proto_vector2));
 ```
+
+For example:
+```cpp
+EXPECT_THAT(MyFunction(some_params), 
+            IsOkAndHolds(UnorderedPointwise(EqualsProto(),
+                                            {proto1, proto2, proto3})));
+```
+
 注意！
 * `proto_vector2` 是在 `EqualsProto()` 外面的
 
