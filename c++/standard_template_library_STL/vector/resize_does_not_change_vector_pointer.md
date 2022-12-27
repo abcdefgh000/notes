@@ -52,3 +52,18 @@ void CustomVector<T>::reserve(int reserve_size) {
   storage_footprint_ = reserve_size;
 }
 ```
+
+So we can make sure that, for example in the following case, after a vector is resized, the pointer that pointed to the vector object before the resizing happened can still access the (elements of the) vector correctly, since the pointer of the vector never changed after the resizing:
+
+```cpp
+std::vector<int> my_vector = { 100 };
+
+std::vector<int>* ptr_to_vector = &my_vector;
+
+// Assume a resize is happening here
+my_vector.push_back(200);
+
+// We can still use `ptr_to_vector` just as we did before the resize happened.
+```
+
+because according to the above design of the `class CustomVector`, the pointer to the vector object never need to be changed after a resizing.
