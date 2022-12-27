@@ -34,4 +34,21 @@ void CustomVector<T>::resize(int new_size) {
   
   size_ = new_size;
 }
+
+template<class T>
+void CustomVector<T>::reserve(int reserve_size) {
+  if (reserve_size <= storage_footprint_) {
+    return;
+  }
+  
+  T* new_pointer_to_elements = new T[reserve_size];
+  for (int i = 0; i < size_; ++i) {
+    new_pointer_to_elements[i] = elements_[i];
+  }
+  
+  delete[] elements_;
+  elements_ = new_pointer_to_elements;
+  
+  storage_footprint_ = reserve_size;
+}
 ```
