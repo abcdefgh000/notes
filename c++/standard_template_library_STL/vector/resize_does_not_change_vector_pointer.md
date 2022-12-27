@@ -1,5 +1,7 @@
 # How to make sure `resize()` doesn't change the pointer of the vector
 
+Thanks to `Xiaojie Hao` for this knowledge.
+
 The trick is:
 
 Create a private field `elements_` (which itself is a pointer) in the vector object, use `elements_` to hold the elements in the vector, so as long as we have the pointer (address) to the vector object, we will have the pointer (address) to the `elements_` field.
