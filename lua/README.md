@@ -8,11 +8,19 @@ local zombie1 = game.Workspace.zombie1
 local reflectance = 0.4
 
 -- Function definition
-local function SetupZombie()
-  zombie1.Reflectance = reflectance
-  print("Done!");
+local function SetupZombie(zombie)
+  zombie.Reflectance = reflectance
+  print("Succeeded setting up a zombie!")
+  return zombie.name
 end
 
 -- Calling the function
-SetupZombie()
+local zombie_name = SetupZombie(zombie1)
+```
+
+## if, loop
+```lua
+if x <= 3 then
+  print("Small")
+end
 ```
