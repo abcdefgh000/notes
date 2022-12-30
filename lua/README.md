@@ -12,4 +12,7 @@ local function SetupZombie()
   zombie1.Reflectance = reflectance
   print("Done!");
 end
+
+-- Calling the function
+SetupZombie()
 ```
