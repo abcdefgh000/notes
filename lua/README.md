@@ -20,7 +20,12 @@ local zombie_name = SetupZombie(zombie1)
 
 ## if, loop
 ```lua
-if x <= 3 then
-  print("Small")
+if animal.name == "Dog" and animal.age <= 3 then
+  print("Small dog")
+end
+```
+```lua
+if animal.name == "Cat" or animal.name == "Lion" then
+  print("Feline")
 end
 ```
