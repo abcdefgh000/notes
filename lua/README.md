@@ -20,6 +20,15 @@ local zombie_name = SetupZombie(zombie1)
 
 ## if, and, or
 ```lua
+if x == 1 then
+  -- do sth
+elseif x == 2 then
+  -- do sth
+else
+  -- do sth
+end
+```
+```lua
 if animal.name == "Dog" and animal.age <= 3 then
   print("Small dog")
 end
