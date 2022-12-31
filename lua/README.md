@@ -46,3 +46,8 @@ while number < 5 do
   number = number + 1
 end
 ```
+```lua
+while true do
+  -- do sth hopefully it can break some time
+end
+```
