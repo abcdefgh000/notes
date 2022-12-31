@@ -17,6 +17,7 @@ end)
 local function TouchedUtilFunction()
   print("Util function: Touched!")
 end
+
 -- Attention: inside `Connect()`, do not use `()` after the function name
 stone1.Touched:Connect(TouchedUtilFunction)
 ```
