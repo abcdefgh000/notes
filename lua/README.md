@@ -43,5 +43,6 @@ end
 ```lua
 while number < 5 do
   -- do sth
+  number = number + 1
 end
 ```
