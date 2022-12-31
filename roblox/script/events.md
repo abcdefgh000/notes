@@ -19,3 +19,26 @@ end
 -- Attention: inside `Connect()`, do not use `()` after the function name
 stone1.Touched:Connect(TouchedUtilFunction)
 ```
+
+## utilize the parameter that is offered (detected) by the event
+
+For example, in the `ObjectBrower` of `Roblox Studio`, the event `Touched` is shown like this:
+```
+Touched
+
+event Touched(Instance otherPart)
+Member of BasePart
+```
+
+So `Instance otherPart` means this event `Touched` can detect and offer you the (opponent) object that is touching the current object FOR FREE. So if the current object is `stone1` and a `ball1` just touched `stone1`, then `otherPart` is `ball1`.
+
+To access and use the `otherPart` in the call back function connected to the event, here is an example: 
+```lua
+local stone1 = game.Workspace.stone1
+
+-- `touching_object` is just an arbitrary name, it can be named anything by the user
+stone1.Touched:Connect(function(touching_object)
+  -- This will print the name of the `touching_object` to the console
+  print(touching_object)
+end)
+```
