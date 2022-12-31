@@ -51,3 +51,11 @@ while true do
   -- do sth hopefully it can break some time
 end
 ```
+
+## repeat (not used very often)
+```lua
+repeat 
+  -- do sth
+  number = number + 2
+until number < 5
+```
