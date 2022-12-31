@@ -2,7 +2,9 @@
 
 ## commonly used statements
 
-* Access the parent object to which the current script lived on. For example if the object and its associated script are:
+* Access the parent object to which the current script lived on.
+
+  For example if the object and its associated script are:
   ```
   stone1
       stone_script
