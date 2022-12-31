@@ -12,7 +12,7 @@ stone1.Touched:Connect(function()
   print("One-off function: Touched!")
 end)
 ```
-```
+```lua
 -- Connect an existing function to an event
 local function TouchedUtilFunction()
   print("Util function: Touched!")
