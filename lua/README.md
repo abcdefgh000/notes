@@ -38,3 +38,10 @@ if animal.name == "Cat" or animal.name == "Lion" then
   print("Feline")
 end
 ```
+
+## while
+```lua
+while number < 5 do
+  -- do sth
+end
+```
