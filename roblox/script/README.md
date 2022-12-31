@@ -10,5 +10,8 @@
     ```
     Then use this statement to get `stone1` in `stone_script`:
     ```lua
-    local stone1 = stript.Parent  -- `script` is a key word! It's not the name of any object! All lower case!
+    -- The `script` in this statement is a key word! It's not the name of any object! 
+    -- (All lower case!)
+    -- `Parent` is also a key word.
+    local stone1 = stript.Parent
     ```
