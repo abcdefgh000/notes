@@ -11,7 +11,8 @@ local stone1 = game.Workspace.stone1
 stone1.Touched:Connect(function()
   print("One-off function: Touched!")
 end)
-
+```
+```
 -- Connect an existing function to an event
 local function TouchedUtilFunction()
   print("Util function: Touched!")
