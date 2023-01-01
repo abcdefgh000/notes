@@ -38,7 +38,8 @@ To access and use the `otherPart` in the call back function connected to the eve
 ```lua
 local stone1 = game.Workspace.stone1
 
--- `touching_object` is just an arbitrary name, it can be named anything by the user
+-- `touching_object` is just an arbitrary name for the above `otherPart`,
+-- it can be named anything by the user
 stone1.Touched:Connect(function(touching_object)
   -- This will print the name of the `touching_object` to the console
   print(touching_object)
