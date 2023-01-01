@@ -42,5 +42,12 @@ local stone1 = game.Workspace.stone1
 stone1.Touched:Connect(function(touching_object)
   -- This will print the name of the `touching_object` to the console
   print(touching_object)
+  
+  -- For a player-object in the game, any part of the player-object can hit the `stone1`,
+  -- like `left_leg`, `right_arm`... can all be the `touching_object`.
+  -- So we have to find the "Humanoid" field in the player-object to really access and manipulate
+  -- the "human body part" in the following way:
+  if touching_object.Parent:FindFirstChild("Humanoid") then
+  end
 end)
 ```
