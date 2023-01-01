@@ -47,8 +47,12 @@ stone1.Touched:Connect(function(touching_object)
   -- For a player-object in the game, any part of the player-object can hit the `stone1`,
   -- like `left_leg`, `right_arm`... can all be the `touching_object`.
   -- So we have to find the "Humanoid" field in the player-object to really access and manipulate
-  -- the "human body part" in the following way:
+  -- the "human body part" in the following way.
+  -- We should check if the `touching_object` has a parent humanoid first instead of directly
+  -- trying to access the humanoid, because anything can touch the `stone1`, for example an apple,
+  -- and the apple does not have a parent humonoid.
   if touching_object.Parent:FindFirstChild("Humanoid") then
+    touching_object.Parent.Humanoid.Health = 0
   end
 end)
 ```
