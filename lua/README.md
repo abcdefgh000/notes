@@ -73,3 +73,8 @@ local my_ingredients = { "egg", "sugar", "flour" }
 local my_stuff = { 1, 2.5, "hi" }
 ```
 
+The index of a table in Lua starts with 1, not 0, that is different than many other languages:
+```lua
+local numbers = { 10, 20, 30 }
+local first_number = numbers[1]  -- This is 10. There is no `numbers[0]`.
+```
