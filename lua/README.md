@@ -64,8 +64,6 @@ until number < 5
 
 ### table
 
-#### define a table
-
 A table can contain different data types, that is different than many other languages:
 ```lua
 local my_numbers = { 1, 2, 3 }
