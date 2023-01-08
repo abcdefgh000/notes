@@ -78,3 +78,24 @@ The index of a table in Lua starts with 1, not 0, that is different than many ot
 local numbers = { 10, 20, 30 }
 local first_number = numbers[1]  -- This is 10. There is no `numbers[0]`.
 ```
+
+Use `table.remove()` to remove an element at the index i in the table. Be aware again that the index in Lua tables begins with 1, not 0.
+```lua
+local numbers = { 5, 3, 9 }
+table.remove(numbers, 2)  -- This will remove the 2nd element, not the 3rd element.
+-- The table `numbers` will now be { 5, 9 }.
+```
+
+Use `table.sort()` to sort a table in ascending order, but the elements in the table have to be sortable.
+```lua
+local numbers = { 5, 3, 9 }
+table.sort(numbers)
+-- The table `numbers` will now be { 3, 5, 9 }.
+```
+
+
+Use `table.concat()` to concatenate all the elements in a table, with a specified connection substring. The numbers can also be concatenated by this function.
+```lua
+local things = { "Hi", 3, "Hey" }
+print(table.concat(things, "-" ))  -- This will display "Hi-3-Hey".
+```
