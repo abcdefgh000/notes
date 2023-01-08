@@ -60,11 +60,11 @@ repeat
 until number < 5
 ```
 
-# data structures
+## data structures
 
-## table
+### table
 
-### define a table
+#### define a table
 
 A table can contain different data types, that is different than many other languages:
 ```lua
