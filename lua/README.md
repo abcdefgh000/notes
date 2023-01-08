@@ -59,3 +59,17 @@ repeat
   number = number + 2
 until number < 5
 ```
+
+# data structures
+
+## table
+
+### define a table
+
+A table can contain different data types, that is different than many other languages:
+```lua
+local my_numbers = { 1, 2, 3 }
+local my_ingredients = { "egg", "sugar", "flour" }
+local my_stuff = { 1, 2.5, "hi" }
+```
+
