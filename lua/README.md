@@ -39,7 +39,7 @@ if animal.name == "Cat" or animal.name == "Lion" then
 end
 ```
 
-## while
+## while loop
 ```lua
 while number < 5 do
   -- do sth
@@ -52,13 +52,30 @@ while true do
 end
 ```
 
-## repeat (not used very often)
+## repeat loop (not used very often)
 ```lua
 repeat 
   -- do sth
   number = number + 2
 until number < 5
 ```
+
+## for loop and the key word `pairs` working together
+```lua
+local fruits = { "apple", "peach", "grape" }
+
+-- In the for loop, `index` and `value` can be named as anything.
+for index, value in pairs(fruits) do
+  print(index.." = "..value)
+end
+```
+The above code will display:
+```
+1 = apple
+2 = peach
+3 = grape
+```
+
 
 ## data structures
 
