@@ -13,11 +13,9 @@ local function CreateOneRainDrop()
 	rain_drop.Anchored = false
 	rain_drop.Transparency = 0.6
 	
-	-- `tick()` is the timestamp of "now".
-	math.randomseed(tick())
-	local origin_x = math.random(0, 30)
+	local origin_x = math.random(1, 30)
 	local origin_y = 100
-	local origin_z = math.random(0, 30)
+	local origin_z = math.random(1, 30)
 	-- Specifies the 3D position of the object: (width, height, length)
 	rain_drop.Position = Vector3.new(origin_x, origin_y, origin_z)
 end
