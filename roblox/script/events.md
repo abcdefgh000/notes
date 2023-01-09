@@ -51,8 +51,12 @@ stone1.Touched:Connect(function(touching_object)
   -- We should check if the `touching_object` has a parent humanoid first instead of directly
   -- trying to access the humanoid, because anything can touch the `stone1`, for example an apple,
   -- and the apple does not have a parent humonoid.
-  if touching_object.Parent:FindFirstChild("Humanoid") then
-    touching_object.Parent.Humanoid.Health = 0
-  end
+  --
+  -- Added another criterion of `Health > 0` to avoid dying multiple times (a humanoid can die multiple
+  -- times before its health is set to 0 since it has multiple body parts that all can touch the death item).
+	if the_touching_object.Parent:FindFirstChild("Humanoid") and the_touching_object.Parent.Humanoid.Health > 0 then
+		the_touching_object.Parent.Humanoid.Health = 0
+		print("Killed " .. the_touching_object.Parent.Name)
+	end
 end)
 ```
