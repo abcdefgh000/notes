@@ -6,7 +6,7 @@
 
 ## steps
 
-### In the script of the `Workspace`
+### in the script of the `Workspace`
 
 Add the following code:
 
@@ -29,7 +29,7 @@ game.Players.PlayerAdded:Connect(function(added_player)
 end)
 ```
 
-### Add a `ClickDetector` to the object to click
+### add a `ClickDetector` to the object to click
 1. Hover the object to click in the `Workspace` panel
 2. Press the `+` button
 3. Choose the `ClickDetector`
@@ -41,7 +41,7 @@ stone1   +
     stone1_script
 ```
 
-### In the script of the object to click
+### in the script of the object to click
 
 Add the following code:
 
