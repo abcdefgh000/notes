@@ -11,3 +11,7 @@ Steps to create a `Tool`:
   * The character will "own" that object and be able to "use" it
 * Rename the `Tool` object, for example `sword`
 * A `Tool` is just a logical container, it does not have an appearance in the game. We have to add visible `Part`(s) into this container to make the `Tool` visible. 
+  * Right click the `sword`, press `+`, add a `Part` under it. So now the `sword` will look like a 3D rectangle.
+* In the game editor, we can not "see" the stuff inside the `StarterPack` category, we have to move the `sword` into the `Workspace` catagory to make it visible, and then we are able to edit its appearance. Now do so.
+
+## haha
