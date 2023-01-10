@@ -18,5 +18,5 @@ A `Tool` can be anything that the character can use in the game, it does not hav
 
 * Move the `sword` (`Tool`) from the `StarterPack` to the `Workspace` category.
 * Click the `Part`, in its `Properties` panel, change the `Part` -> `Shape` from `Block` to `Cylinder`.
-* Change the size, color... of the `Part` if you want.
+* Change the size, color, material... of the `Part` if you want.
 * Connect several `Part`s to be one object to represent a `Tool` is a more advanced topic, will interprete that in another doc
