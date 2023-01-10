@@ -16,5 +16,5 @@ A `Tool` can be anything that the character can use in the game, it does not hav
 
 ## Edit the apperance of the `Tool`
 
-* Move the `sword` (`Tool`) from the `StarterPack` to the `Workspace` category
-* aa
+* Move the `sword` (`Tool`) from the `StarterPack` to the `Workspace` category.
+* Click the `Part`, in its `Properties` panel, change the `Part` -> `Shape` from `Block` to `Cylinder`.
