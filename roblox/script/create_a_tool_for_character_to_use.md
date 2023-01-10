@@ -29,4 +29,7 @@ A `Tool` can be anything that the character can use in the game, it does not hav
 
 ## start the game and the player will have the `Tool`
 * When the character is not holding the `Tool`, this `Tool` will be in the `Backpack` of the `player_name` in the `Players` category (in the `Explorer`).
-* When the character is holding the `Tool`, this `Tool` will disappear from the above `Backpack`, and be moved inside the `player_name` in the `Workspace` category (in the `Explorer`).
+* When the character is holding the `Tool`, this `Tool` will disappear from the above `Backpack`, and be moved inside the `player_name` (refer to as a `character`) in the `Workspace` category (in the `Explorer`).
+* The above is the (tiny) difference between the concepts of `player` and `charecter` in Roblox.
+
+
