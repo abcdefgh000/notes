@@ -9,4 +9,5 @@ Steps to create a `Tool`:
 * Any object in `StarterPack` will be:
   * Put into the "inventory" of a charater right away
   * The character will "own" that object and be able to "use" it
-* 
+* Rename the `Tool` object, for example `sword`
+* A `Tool` is just a logical container, it does not have an appearance in the game. We have to add visible `Part`(s) into this container to make the `Tool` visible. 
