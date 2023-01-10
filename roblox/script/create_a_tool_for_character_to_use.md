@@ -1,9 +1,9 @@
-# create a tool for the characters in `StarterPack` to use in the game
+# create a tool for the characters to use in the game
 
-## create the `Tool` object in the `StarterPack` category
 A `Tool` can be anything that the character can use in the game, it does not have to be a literal "tool", it can be a "weapon", "potion bottle", "decoration stuff"...
 
-Steps to create a `Tool`:
+## create the `Tool` object in the `StarterPack` category
+
 * Hover on the `StarterPack` category in the `Explorer`, press the `+` button
 * Choose `InsertObject`, then choose `Tool`, in this way we have created a `Tool` type object inside `StarterPack`
 * Any object in `StarterPack` will be:
@@ -14,4 +14,7 @@ Steps to create a `Tool`:
   * Right click the `sword`, press `+`, add a `Part` under it. So now the `sword` will look like a 3D rectangle.
 * In the game editor, we can not "see" the stuff inside the `StarterPack` category, we have to move the `sword` into the `Workspace` catagory to make it visible, and then we are able to edit its appearance. Now do so.
 
-## haha
+## Edit the apperance of the `Tool`
+
+* Move the `sword` (`Tool`) from the `StarterPack` to the `Workspace` category
+* aa
