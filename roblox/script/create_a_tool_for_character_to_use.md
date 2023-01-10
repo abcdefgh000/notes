@@ -63,6 +63,13 @@ For example, make the `sword` chop something in the game scene:
 
 Then we can create something to be chopped by the `sword` in the game:
 
-* Create a `Part` (maybe name it wood block) in the game scene.
-* 
+* Create a `Part` in the game scene, name it `wood_block1`.
+* In the `Activated:Connect()` call back funcion of the above `sword`, make the `wood_block1` to be destroyed when the player is holding the `sword` AND clicking the left button of the mouse:
+  ```lua
+  sword.Activated:Connect(function()
+    print("You clicked left button on the mouse when holding this sword")
+    
+    game.Workspace.wood_block1:Destroy()
+  end)  
+  ```
 
