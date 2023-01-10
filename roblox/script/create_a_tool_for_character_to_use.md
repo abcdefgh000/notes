@@ -41,25 +41,25 @@ For example, make the `sword` chop something in the game scene:
 * Add a `Script` in the `sword`.
 * Type the following code in this `Script`:
 
-```lua
-local sword = script.Parent
+  ```lua
+  local sword = script.Parent
+  
+  sword.Equipped:Connect(function()
+    print("You've just grabbed this sword in your hand")
+  end)
 
-sword.Equipped:Connect(function()
-  print("You've just grabbed this sword in your hand")
-end)
+  sword.Unequipped:Connect(function()
+    print("You've just put this sword back to your Backpack")
+  end)
 
-sword.Unequipped:Connect(function()
-  print("You've just put this sword back to your Backpack")
-end)
+  sword.Activated:Connect(function()
+    print("You clicked left button on the mouse when holding this sword")
+  end)
 
-sword.Activated:Connect(function()
-  print("You clicked left button on the mouse when holding this sword")
-end)
-
-sword.Deactivated:Connect(function()
-  print("You released left button on the mouse when holding this sword")
-end)
-```
+  sword.Deactivated:Connect(function()
+    print("You released left button on the mouse when holding this sword")
+  end)
+  ```
 
 Then we can create something to be chopped by the `sword` in the game:
 
