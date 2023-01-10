@@ -37,14 +37,28 @@ A `Tool` can be anything that the character can use in the game, it does not hav
 For example, make the `sword` chop something in the game scene:
 
 * Go to the `Object Brower` in the `Roblox Studio`, find the `Tool` class, check which method it has.
-  * The most important methods fo `Tool` are `Activated`, `Deactivated`, `Equipped`, `Unequipped`...
+  * The most important methods fo `Tool` are `Equipped`, `Unequipped`, `Activated`, `Deactivated`...
 * Add a `Script` in the `sword`.
 * Type the following code in this `Script`:
 
 ```lua
 local sword = script.Parent
 
-sword.Activated:Connect()
+sword.Equipped:Connect(function()
+  print("You've just grabbed this sword in your hand")
+end)
+
+sword.Unequipped:Connect(function()
+  print("You've just put this sword back to your Backpack")
+end)
+
+sword.Activated:Connect(function()
+  print("You clicked left button on the mouse when holding this sword")
+end)
+
+sword.Deactivated:Connect(function()
+  print("You released left button on the mouse when holding this sword")
+end)
 ```
 
 Then we can create something to be chopped by the `sword` in the game:
