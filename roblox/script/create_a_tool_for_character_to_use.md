@@ -32,4 +32,23 @@ A `Tool` can be anything that the character can use in the game, it does not hav
 * When the character is holding the `Tool`, this `Tool` will disappear from the above `Backpack`, and be moved inside the `player_name` (refer to as a `character`) in the `Workspace` category (in the `Explorer`).
 * The above is the (tiny) difference between the concepts of `player` and `charecter` in Roblox.
 
+## make the `Tool` do something
+
+For example, make the `sword` chop something in the game scene:
+
+* Go to the `Object Brower` in the `Roblox Studio`, find the `Tool` class, check which method it has.
+  * The most important methods fo `Tool` are `Activated`, `Deactivated`, `Equipped`, `Unequipped`...
+* Add a `Script` in the `sword`.
+* Type the following code in this `Script`:
+
+```lua
+local sword = script.Parent
+
+sword.Activated:Connect()
+```
+
+Then we can create something to be chopped by the `sword` in the game:
+
+* Create a `Part` (maybe name it wood block) in the game scene.
+* 
 
