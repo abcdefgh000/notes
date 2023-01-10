@@ -20,3 +20,12 @@ A `Tool` can be anything that the character can use in the game, it does not hav
 * Click the `Part`, in its `Properties` panel, change the `Part` -> `Shape` from `Block` to `Cylinder`.
 * Change the size, color, material... of the `Part` if you want.
 * Connect several `Part`s to be one object to represent a `Tool` is a more advanced topic, will interprete that in another doc
+* Move the `sword` back to the `StarterPack` category.
+
+## Name the `Handle` `Part` in the `Tool`
+
+* There must be exactly 1 `Part` in the `Tool` that is named exactly `"Handle"` (must start with capital letter `"H"` and all small letters afterwards, or Roblox won't be able to recognize it). This is for Roblox to figure out how to make the character to hold this `Tool`.
+* Since in this example the `sword` only have 1 `Part`, we will have to name this `Part` to be `"Handle"`.
+
+
+
