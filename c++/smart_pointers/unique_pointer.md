@@ -1,19 +1,19 @@
 # Unique Pointer
 
-## Overview
-### Create unique pointerwith
-最好用
+## overview
+
+### create a unique pointer by a constructor
+
+Do it this way:
 ```cpp
-auto class1 = std::make_unique<MyClass>(100)
-```
-or 
-```cpp
-auto class1 = absl::make_unique<MyClass>(100)
+auto cake1 = std::make_unique<Cake>();
+auto cake2 = std::make_unique<Cake>(100, "Cheese Cake");
 ```
 
-不要用 `new` 或者：
+Do not do it this way:
 ```cpp
-std::unique_ptr<MyClass> transformer_factory(100);
+std::unique_ptr<Cake> cake1(new Cake());
+std::unique_ptr<Cake> cake2(new Cake(100, "Cheese Cake"));
 ```
 
 ## Reassign unique pointer
